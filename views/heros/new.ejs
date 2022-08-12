@@ -2,11 +2,13 @@
 
 <h1>IceFrog, Please!</h1>
 <form action="/heros" id="new-form" method="post">
+
     <label>Hero Name:
-        <input type="text" name="name" placeholder="Hero Name">
+        <input type="text" name="name" placeholder="Hero Name" required>
     </label><br>
+
     <label>Primary Attribute:
-        <select id="primaryAttribute" name="primaryAttribute" class="attribute">
+        <select id="primaryAttribute" name="primaryAttribute" class="attribute" required>
             <option hidden disabled selected value>Primary Attribute</option>
             <option value="agility">Agility</option>
             <option value="intelligence">Intelligence</option>
@@ -15,7 +17,7 @@
     </label><br>
 
     <label>Secondary Attribute:
-        <select id="secondaryAttribute" name="secondaryAttribute" class="attribute">
+        <select id="secondaryAttribute" name="secondaryAttribute" class="attribute" required>
             <option hidden disabled selected value>Secondary Attribute</option>
             <option value="agility">Agility</option>
             <option value="intelligence">Intelligence</option>
@@ -24,7 +26,7 @@
     </label><br>
 
     <label>Attack Type:
-        <select name="attackType" id="attackType">
+        <select name="attackType" id="attackType" required>
             <option hidden disabled selected value>Attack Type</option>
             <option value="agility">Melee</option>
             <option value="intelligence">Ranged</option>
@@ -32,7 +34,7 @@
     </label><br>
 
     <label> Ability 1:
-        <select name="abilityOne" id="abilityOne" class="ability">
+        <select name="abilityOne" id="abilityOne" class="ability" required>
             <option hidden disabled selected value>Ability 1</option>
             <option value="buff">Ally Stats Buff</option>
             <option value="atk-modifier">Attack Modifier</option>
@@ -45,7 +47,7 @@
     </label><br>
 
     <label> Ability 2:
-        <select name="abilityTwo" id="abilityTwo" class="ability">
+        <select name="abilityTwo" id="abilityTwo" class="ability" required>
             <option hidden disabled selected value>Ability 2</option>
             <option value="buff">Ally Stats Buff</option>
             <option value="atk-modifier">Attack Modifier</option>
@@ -58,7 +60,7 @@
     </label><br>
 
     <label> Ability 3:
-        <select name="abilityThree" id="abilityThree" class="ability">
+        <select name="abilityThree" id="abilityThree" class="ability" required>
             <option hidden disabled selected value>Ability 3</option>
             <option value="buff">Ally Stats Buff</option>
             <option value="atk-modifier">Attack Modifier</option>
@@ -71,7 +73,7 @@
     </label><br>
 
     <label> Ability 4:
-        <select name="abilityFour" id="abilityFour" class="ability">
+        <select name="abilityFour" id="abilityFour" class="ability" required>
             <option hidden disabled selected value>Ability 4</option>
             <option value="buff">Ally Stats Buff</option>
             <option value="atk-modifier">Attack Modifier</option>
@@ -84,7 +86,9 @@
     </label><br>
 
     <label>Lore:
-        <textarea name="lore" id="lore" cols="35" rows="5"></textarea>
-    </label>
+        <textarea name="lore" id="lore" cols="35" rows="5" required></textarea>
+    </label><br>
+
+    <input type="submit" value="Submit Hero">
 
 </form>

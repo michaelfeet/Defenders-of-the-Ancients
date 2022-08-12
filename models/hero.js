@@ -40,4 +40,4 @@ const heroSchema = new mongoose.Schema(
     }
 )
 
-module.exports = mongoose('Hero, heroSchema')
+module.exports = mongoose.model('Hero', heroSchema);

@@ -4,7 +4,9 @@ const profileSchema = new mongoose.Schema(
     {
     name: String,
     avatar: String,
-    hero: {ObjectId, ref:'Hero'}
+    heros: [{type: Schema.Types.ObjectId, ref: 'Hero'}]
+    }, {
+        timestamps: true
     }
 )
 
