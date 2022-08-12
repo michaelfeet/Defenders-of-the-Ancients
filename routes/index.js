@@ -1,5 +1,6 @@
-const router = require('express').Router();
-const passport = require('passport');
+const express = require('express');
+const router = express.Router();
+const passport = require('passport')
 
 // The root route renders our only view
 router.get('/', function(req, res) {
@@ -8,7 +9,7 @@ router.get('/', function(req, res) {
   // in the student demo this was res.redirect('/movies'), what do you want?
   // This could be a landing page, or just redirect to your main resource page which you'll have an a tag that makes 
   // a request to `/auth/google` route below
-  res.render('home.ejs')
+  res.render('heros/index')
 });
 
 // Google OAuth login route
@@ -21,16 +22,17 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/home', // UPDATE THIS, where do you want the client to go after you login 
-    failureRedirect : '/home' //  UPDATE THIS, where do you want the client to go if login fails
+    successRedirect : '/heros/index', // UPDATE THIS, where do you want the client to go after you login 
+    failureRedirect : '/index' //  UPDATE THIS, where do you want the client to go if login fails
   }
 ));
 
 // OAuth logout route
 router.get('/logout', function(req, res){
-  req.logout(function(){ //< - req.logout comes from passport, and what it does is destorys the cookie keeping track of the user!
-    res.redirect('/home') // <---- UPDATE THIS TO WHERE YOU WANT THE USER TO GO AFTER LOGOUT
+  req.logout(function(){ //< - req.logout comes from passport, and what it does is destroys the cookie keeping track of the user!
+    res.redirect('/index') // <---- UPDATE THIS TO WHERE YOU WANT THE USER TO GO AFTER LOGOUT
   })
 })
+
 
 module.exports = router;
