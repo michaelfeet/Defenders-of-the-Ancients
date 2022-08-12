@@ -1,4 +1,13 @@
 <%- include('../partials/header') %>
-    <h1>test</h1>
+
+    <h1>Defend the Ancients by helping IceFrog create the next Hero</h1>
+
+    <% if (user) { %>
+        <a href="/heros/new"><button>Create Hero</button></a>
+    <% } else {  %>
+        <a href="/auth/google" class="login"><button>Get Started!</button></a>
+    <% } %> 
+
+    
 </body>
 </html>
