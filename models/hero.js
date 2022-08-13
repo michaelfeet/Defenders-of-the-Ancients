@@ -34,6 +34,7 @@ const heroSchema = new mongoose.Schema(
             type: String,
             required: true
         },
+        // USER MODEL
     }, 
     {
         timestamps: true
