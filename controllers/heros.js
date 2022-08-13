@@ -24,6 +24,10 @@ function newHero(req, res) {
 }
 
 function create(req, res) {
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.userAvatar = req.user.avatar
+    
     Hero.create(req.body, function(err, heroDoc){        
         if (err) {
             console.log(err, "<- err in create hero")
