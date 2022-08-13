@@ -8,25 +8,36 @@ module.exports = {
 }
 
 function index(req, res) {
-    console.log('index page')
-    res.render('heros/index.ejs')
+    Hero.find({}, function(err, allHeros) {
+        if(err) {
+            res.send('error all heros')
+        }
+        console.log(allHeros, 'all heros')
+        res.render('heros/index.ejs', {
+            heros: allHeros
+        })
+    })
 }
 
 function newHero(req, res) {
-    console.log('create hero page')
     res.render('heros/new.ejs')
 }
 
 function create(req, res) {
-    Hero.create(req.body, function(err, heroDoc) {
-        console.log(req.body, 'create req.body')
-        if(err) {
-            return res.render('heros/new.ejs', heroDoc)
+    Hero.create(req.body, function(err, heroDoc){        
+        if (err) {
+            console.log(err, "<- err in create hero")
+            return res.render("heros/new.ejs");
         }
-        res.redirect('/heros')
+        res.redirect(`/heros/${heroDoc._id}`);
     })
 }
 
 function show(req, res) {
-    res.render('heros/show.ejs')
+    Hero.findById(req.params.id, function(err, heroDoc) {
+        console.log(heroDoc, 'show page')
+        res.render('heros/show', {
+            hero: heroDoc
+        })
+    })
 }
