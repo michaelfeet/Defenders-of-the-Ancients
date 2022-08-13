@@ -1,2 +1,22 @@
 <%- include('../partials/header') %>
 <h1>test</h1>
+<section>
+    <tr>
+        <td><%= hero.name %></td>
+        <td><%= hero.attackType %></td>
+        <td><%= hero.primaryAttribute %></td>
+        <td><%= hero.secondaryAttribute %></td>
+        <td><%= hero.abilityOne %></td>
+        <td><%= hero.abilityTwo %></td>
+        <td><%= hero.abilityThree %></td>
+        <td><%= hero.abilityFour %></td>
+        <td><%= hero.lore %> </td>
+        <td>
+            <% if (user?._id.equals(hero.user)) { %>
+                <form action="/heros/<%= hero._id %>?_method=DELETE" method="POST">
+                    <button type="submit">X</button>
+                  </form>
+            <% } %>
+        </td>
+    </tr>
+</section>

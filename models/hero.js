@@ -5,11 +5,14 @@ const heroSchema = new mongoose.Schema(
         name: {
             type: String,
         },
-        pAttribute: {
+        primaryAttribute: {
             type: String,
         },
-        sAttribute: {
+        secondaryAttribute: {
             type: String,
+        },
+        attackType: {
+            type:String
         },
         abilityOne: {
             type: String,

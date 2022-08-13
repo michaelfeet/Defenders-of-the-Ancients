@@ -8,6 +8,26 @@
         <a href="/auth/google" class="login"><button>Get Started!</button></a>
     <% } %> 
 
+    <br>
+
+    <% heros.forEach(hero => { %>
+        <div>
+
+        </div>
+        <tr>
+            <td><a href="/heros/<%= hero._id %>"><%= hero.name %></td></a>
+            <td><%= hero.attackType %></td>
+            <td><%= hero.primaryAttribute %></td>
+            <td><%= hero.secondaryAttribute %></td>
+            <td><%= hero.abilityOne %></td>
+            <td><%= hero.abilityTwo %></td>
+            <td><%= hero.abilityThree %></td>
+            <td><%= hero.abilityFour %></td>
+            <td><%= hero.lore %> </td>
+            <br>
+        </tr>
+    <% }) %>
+
     
 </body>
 </html>
