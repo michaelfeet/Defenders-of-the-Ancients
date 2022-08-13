@@ -4,7 +4,8 @@ module.exports = {
     index,
     new: newHero,
     create,
-    show
+    show,
+    delete: deleteHero
 }
 
 function index(req, res) {
@@ -12,7 +13,6 @@ function index(req, res) {
         if(err) {
             res.send('error all heros')
         }
-        console.log(allHeros, 'all heros')
         res.render('heros/index.ejs', {
             heros: allHeros
         })
@@ -27,10 +27,9 @@ function create(req, res) {
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar
-    
+
     Hero.create(req.body, function(err, heroDoc){        
         if (err) {
-            console.log(err, "<- err in create hero")
             return res.render("heros/new.ejs");
         }
         res.redirect(`/heros/${heroDoc._id}`);
@@ -39,9 +38,14 @@ function create(req, res) {
 
 function show(req, res) {
     Hero.findById(req.params.id, function(err, heroDoc) {
-        console.log(heroDoc, 'show page')
         res.render('heros/show', {
             hero: heroDoc
         })
+    })
+}
+
+function deleteHero(req, res) {
+    Hero.findByIdAndDelete(req.params.id, function(err, heroDoc){
+        res.redirect('/heros')
     })
 }

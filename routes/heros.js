@@ -7,5 +7,6 @@ router.get('/', heroCtrl.index);
 router.get('/new', isLoggedIn, heroCtrl.new)
 router.get('/:id', isLoggedIn, heroCtrl.show)
 router.post('/', isLoggedIn, heroCtrl.create)
+router.delete('/:id', heroCtrl.delete)
 
 module.exports = router;

@@ -11,6 +11,7 @@
         <td><%= hero.abilityThree %></td>
         <td><%= hero.abilityFour %></td>
         <td><%= hero.lore %> </td>
+        <td><%= hero.userName.split(' ').splice(0,1).join() %> </td>
         <td>
             <% if (user?._id.equals(hero.user)) { %>
                 <form action="/heros/<%= hero._id %>?_method=DELETE" method="POST">
