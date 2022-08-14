@@ -1,0 +1,96 @@
+<%- include('../partials/header') %>
+
+<h1><%= hero.name %></h1>
+
+<form action="/heros/<%= hero.id %>?_method=PUT" id="edit-form" method="post">
+
+    <label>Hero Name:
+        <input type="text" name="name" placeholder="Hero Name" required>
+    </label><br>
+
+    <label>Primary Attribute:
+        <select id="primaryAttribute" name="primaryAttribute" class="attribute" required>
+            <option hidden disabled selected value>Primary Attribute</option>
+            <option value="agility">Agility</option>
+            <option value="intelligence">Intelligence</option>
+            <option value="strength">Strength</option>
+        </select>
+    </label><br>
+
+    <label>Secondary Attribute:
+        <select id="secondaryAttribute" name="secondaryAttribute" class="attribute" required>
+            <option hidden disabled selected value>Secondary Attribute</option>
+            <option value="agility">Agility</option>
+            <option value="intelligence">Intelligence</option>
+            <option value="strength">Strength</option>
+        </select>
+    </label><br>
+
+    <label>Attack Type:
+        <select name="attackType" id="attackType" required>
+            <option hidden disabled selected value>Attack Type</option>
+            <option value="melee">Melee</option>
+            <option value="ranged">Ranged</option>
+        </select>
+    </label><br>
+
+    <label> Ability 1:
+        <select name="abilityOne" id="abilityOne" class="ability" required>
+            <option hidden disabled selected value>Ability 1</option>
+            <option value="buff">Ally Stats Buff</option>
+            <option value="atk-modifier">Attack Modifier</option>
+            <option value="debuff">Enemy Stats Debuff</option>
+            <option value="heal">Heal Ally</option>
+            <option value="micro-units">Micro Units</option>
+            <option value="slow">Slow Enemy</option>
+            <option value="stun">Stun Enemy</option>
+        </select>
+    </label><br>
+
+    <label> Ability 2:
+        <select name="abilityTwo" id="abilityTwo" class="ability" required>
+            <option hidden disabled selected value>Ability 2</option>
+            <option value="buff">Ally Stats Buff</option>
+            <option value="atk-modifier">Attack Modifier</option>
+            <option value="debuff">Enemy Stats Debuff</option>
+            <option value="heal">Heal Ally</option>
+            <option value="micro-units">Micro Units</option>
+            <option value="slow">Slow Enemy</option>
+            <option value="stun">Stun Enemy</option>
+        </select>
+    </label><br>
+
+    <label> Ability 3:
+        <select name="abilityThree" id="abilityThree" class="ability" required>
+            <option hidden disabled selected value>Ability 3</option>
+            <option value="buff">Ally Stats Buff</option>
+            <option value="atk-modifier">Attack Modifier</option>
+            <option value="debuff">Enemy Stats Debuff</option>
+            <option value="heal">Heal Ally</option>
+            <option value="micro-units">Micro Units</option>
+            <option value="slow">Slow Enemy</option>
+            <option value="stun">Stun Enemy</option>
+        </select>
+    </label><br>
+
+    <label> Ability 4:
+        <select name="abilityFour" id="abilityFour" class="ability" required>
+            <option hidden disabled selected value>Ability 4</option>
+            <option value="buff">Ally Stats Buff</option>
+            <option value="atk-modifier">Attack Modifier</option>
+            <option value="debuff">Enemy Stats Debuff</option>
+            <option value="heal">Heal Ally</option>
+            <option value="micro-units">Micro Units</option>
+            <option value="slow">Slow Enemy</option>
+            <option value="stun">Stun Enemy</option>
+        </select>
+    </label><br>
+
+    <label>Lore:
+        <br>
+        <textarea name="lore" id="lore" cols="35" rows="5" required></textarea>
+    </label><br>
+
+    <input type="submit" value="Submit Hero">
+
+</form>

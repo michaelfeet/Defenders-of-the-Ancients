@@ -3,9 +3,11 @@ const Hero = require('../models/hero');
 module.exports = {
     index,
     new: newHero,
-    create,
-    show,
-    delete: deleteHero
+    create: createHero,
+    show:showHero,
+    delete: deleteHero,
+    edit: editHero,
+    update: updateHero
 }
 
 function index(req, res) {
@@ -23,7 +25,7 @@ function newHero(req, res) {
     res.render('heros/new.ejs')
 }
 
-function create(req, res) {
+function createHero(req, res) {
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar
@@ -36,7 +38,7 @@ function create(req, res) {
     })
 }
 
-function show(req, res) {
+function showHero(req, res) {
     Hero.findById(req.params.id, function(err, heroDoc) {
         res.render('heros/show', {
             hero: heroDoc
@@ -47,5 +49,21 @@ function show(req, res) {
 function deleteHero(req, res) {
     Hero.findByIdAndDelete(req.params.id, function(err, heroDoc){
         res.redirect('/heros')
+    })
+}
+
+function editHero(req, res) {
+    Hero.findById(req.params.id, function(err, heroDoc) {
+        res.render('heros/edit.ejs', {
+            hero: heroDoc
+        })
+    })
+}
+
+function updateHero(req, res) {
+    Hero.findByIdAndUpdate(req.params.id, req.body, function(err, heroDoc) {
+        heroDoc.save(function(err) {
+            res.redirect(`/heros/${heroDoc._id}`)
+        })
     })
 }

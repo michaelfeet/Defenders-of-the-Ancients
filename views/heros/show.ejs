@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-<h1>test</h1>
+<h1>SHOW</h1>
 <section>
     <tr>
         <td><%= hero.name %></td>
@@ -14,6 +14,9 @@
         <td><%= hero.userName.split(' ').splice(0,1).join() %> </td>
         <td>
             <% if (user?._id.equals(hero.user)) { %>
+                <form action="/heros/<%= hero._id %>/edit" method="GET">
+                    <button type="submit">Edit Hero</button>
+                </form>
                 <form action="/heros/<%= hero._id %>?_method=DELETE" method="POST">
                     <button type="submit">X</button>
                   </form>
