@@ -5,12 +5,9 @@ const isLoggedIn = require('../config/auth');
 
 router.get('/', heroCtrl.index);
 router.get('/new', isLoggedIn, heroCtrl.new)
-router.get('/:id', isLoggedIn, heroCtrl.show)
-
+router.get('/:id', heroCtrl.show)
 router.post('/', isLoggedIn, heroCtrl.create)
-
 router.delete('/:id', isLoggedIn, heroCtrl.delete)
-
 router.get('/:id/edit', isLoggedIn, heroCtrl.edit)
 router.put('/:id', isLoggedIn, heroCtrl.update)
 

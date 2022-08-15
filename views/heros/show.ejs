@@ -19,8 +19,46 @@
                 </form>
                 <form action="/heros/<%= hero._id %>?_method=DELETE" method="POST">
                     <button type="submit">X</button>
-                  </form>
+                </form>
             <% } %>
         </td>
     </tr>
+</section>
+<br>
+<br>
+
+<section>
+    <% if (user) { %>
+        <h2>Comments</h2>
+        <form id="add-comment-form" action="/heros/<%= hero._id %>/comments" method="post">
+            <label>Leave a comment!</label>
+            <br>
+
+            <textarea name="comment" id="" cols="30" rows="5"></textarea>
+            <input type="submit" value="Add Comment">
+        </form>
+        
+    <% } %>
+</section>
+
+<section>
+    <% if (hero.comments.length) { %>
+        <% hero.comments.forEach(comment => { %>
+            <div>
+                <div><%= comment.comment %></div>
+                <div><%= comment.userName.split(' ').splice(0,1).join() %></div>
+                <div><%= comment.createdAt.toLocaleDateString() %></div>
+            </div>
+            <br>
+            <% if (user?._id.equals(comment.user)) { %>
+                <form action="/comments/<%= comment._id %>?_method=DELETE" method="post">
+                    <input type="submit" value="Delete comment">
+                </form>
+             
+            <% } %>
+        <% }) %>
+    <% } else { %>
+        <h4>No Comments</h4>
+    <% } %>
+         
 </section>
