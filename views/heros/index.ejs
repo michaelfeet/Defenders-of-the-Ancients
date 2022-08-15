@@ -1,33 +1,32 @@
 <%- include('../partials/header') %>
 
-    <h1>Defend the Ancients by helping IceFrog create the next Hero</h1>
+<h1>Defend the Ancients by helping IceFrog create the next Hero</h1>
 
-    <% if (user) { %>
-        <a href="/heros/new"><button>Create Hero</button></a>
-    <% } else {  %>
-        <a href="/auth/google" class="login"><button>Get Started!</button></a>
-    <% } %> 
+<% if (user) { %>
+    <a href="/heros/new"><button>Create Hero</button></a>
+<% } else {  %>
+    <a href="/auth/google" class="login"><button>Get Started!</button></a>
+<% } %> 
 
-    <br>
+<br>
 
+
+<div class="grid-container">
     <% heros.forEach(hero => { %>
-        <div>
-
+        <div class="grid-item">
+            <div><a href="/heros/<%= hero._id %>"><%= hero.name %></div></a>
+            <!-- <div><%= hero.attackType %></div>
+            <div><%= hero.primaryAttribute %></div>
+            <div><%= hero.secondaryAttribute %></div>
+            <div><%= hero.abilityOne %></div>
+            <div><%= hero.abilityTwo %></div>
+            <div><%= hero.abilityThree %></div>
+            <div><%= hero.abilityFour %></div> -->
+            <div><%= hero.lore %> </div>
         </div>
-        <tr>
-            <td><a href="/heros/<%= hero._id %>"><%= hero.name %></td></a>
-            <td><%= hero.attackType %></td>
-            <td><%= hero.primaryAttribute %></td>
-            <td><%= hero.secondaryAttribute %></td>
-            <td><%= hero.abilityOne %></td>
-            <td><%= hero.abilityTwo %></td>
-            <td><%= hero.abilityThree %></td>
-            <td><%= hero.abilityFour %></td>
-            <td><%= hero.lore %> </td>
-            <br>
-        </tr>
     <% }) %>
+</div>
+
 
     
-</body>
-</html>
+<%- include('../partials/footer') %>

@@ -1,27 +1,37 @@
 <%- include('../partials/header') %>
 <h1>SHOW</h1>
-<section>
+<div>
+    <div>
+        <div><%= hero.primaryAttribute %></div>
+        <div><%= hero.name %></div>
+        <div><%= hero.lore %> </div>
+        <div><%= hero.attackType %></div>
+    </div>
+    <br>
+    <div>
+        <div><%= hero.abilityOne %></div>
+        <div><%= hero.abilityTwo %></div>
+        <div><%= hero.abilityThree %></div>
+        <div><%= hero.abilityFour %></div>
+    </div>
+    
+    <div><%= hero.secondaryAttribute %></div>
+
+    
+    <div><%= hero.userName.split(' ').splice(0,1).join() %> </div>
+    <div>
+        <% if (user?._id.equals(hero.user)) { %>
+            <form action="/heros/<%= hero._id %>/edit" method="GET">
+                <button type="submit">Edit Hero</button>
+            </form>
+            <form action="/heros/<%= hero._id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+            </form>
+        <% } %>
+    </div>
+</div>
     <tr>
-        <td><%= hero.name %></td>
-        <td><%= hero.attackType %></td>
-        <td><%= hero.primaryAttribute %></td>
-        <td><%= hero.secondaryAttribute %></td>
-        <td><%= hero.abilityOne %></td>
-        <td><%= hero.abilityTwo %></td>
-        <td><%= hero.abilityThree %></td>
-        <td><%= hero.abilityFour %></td>
-        <td><%= hero.lore %> </td>
-        <td><%= hero.userName.split(' ').splice(0,1).join() %> </td>
-        <td>
-            <% if (user?._id.equals(hero.user)) { %>
-                <form action="/heros/<%= hero._id %>/edit" method="GET">
-                    <button type="submit">Edit Hero</button>
-                </form>
-                <form action="/heros/<%= hero._id %>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
-                </form>
-            <% } %>
-        </td>
+
     </tr>
 </section>
 <br>
@@ -62,3 +72,5 @@
     <% } %>
          
 </section>
+
+<%- include('../partials/footer') %>

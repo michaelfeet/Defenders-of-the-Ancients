@@ -22,3 +22,39 @@
 textarea {
   resize: none;
 }
+
+html {
+  height: 100%;
+  background-image: url('../images/background.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-image: linear-gradient(to left bottom, #788089, #5c626b, #42464d, #292c32, #121419); */
+}
+
+main {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+
+html, a {
+  color: rgba(210, 210, 210);
+  text-decoration: none;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 0 100px;
+  width: 1000px;
+}
+
+.grid-item {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  margin: 10px;
+  height: 250px;
+  width: 250px;
+}
