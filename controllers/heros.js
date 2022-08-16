@@ -29,6 +29,16 @@ function createHero(req, res) {
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar
+    // console.log(req)
+    // const image = {
+    //     img: {
+    //         data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.body.image)),
+    //         contentType: 'image/png'
+    //     }
+    // }
+
+    // req.body.image = image
+    
 
     Hero.create(req.body, function(err, heroDoc){        
         if (err) {

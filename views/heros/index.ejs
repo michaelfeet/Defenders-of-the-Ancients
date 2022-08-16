@@ -1,32 +1,31 @@
 <%- include('../partials/header') %>
+<div class="home">
+    <h1 class="home">Defend the Ancients by helping IceFrog create the next Hero</h1>
 
-<h1>Defend the Ancients by helping IceFrog create the next Hero</h1>
-
-<% if (user) { %>
-    <a href="/heros/new"><button>Create Hero</button></a>
-<% } else {  %>
-    <a href="/auth/google" class="login"><button>Get Started!</button></a>
-<% } %> 
-
-<br>
-
-
-<div class="grid-container">
-    <% heros.forEach(hero => { %>
-        <div class="grid-item">
-            <div><a href="/heros/<%= hero._id %>"><%= hero.name %></div></a>
-            <!-- <div><%= hero.attackType %></div>
-            <div><%= hero.primaryAttribute %></div>
-            <div><%= hero.secondaryAttribute %></div>
-            <div><%= hero.abilityOne %></div>
-            <div><%= hero.abilityTwo %></div>
-            <div><%= hero.abilityThree %></div>
-            <div><%= hero.abilityFour %></div> -->
-            <div><%= hero.lore %> </div>
-        </div>
-    <% }) %>
+    <% if (user) { %>
+        <a href="/heros/new"><button>Create Hero</button></a>
+    <% } else {  %>
+        <a href="/auth/google" class="login"><button>Get Started!</button></a>
+    <% } %> 
+    
+    <br>
+    
+    
+    <div class="home-grid-container">
+        <% heros.forEach(hero => { %>
+            <div class="home-grid-item">
+                <div><a href="/heros/<%= hero._id %>"><%= hero.name %></div></a>
+                <!-- <div><%= hero.attackType %></div>
+                <div><%= hero.primaryAttribute %></div>
+                <div><%= hero.secondaryAttribute %></div>
+                <div><%= hero.abilityOne %></div>
+                <div><%= hero.abilityTwo %></div>
+                <div><%= hero.abilityThree %></div>
+                <div><%= hero.abilityFour %></div> -->
+                <!-- <div><%= hero.lore %> </div> -->
+            </div>
+        <% }) %>
+    </div>
 </div>
-
-
     
 <%- include('../partials/footer') %>

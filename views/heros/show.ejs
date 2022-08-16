@@ -1,76 +1,68 @@
 <%- include('../partials/header') %>
-<h1>SHOW</h1>
-<div>
-    <div>
-        <div><%= hero.primaryAttribute %></div>
-        <div><%= hero.name %></div>
-        <div><%= hero.lore %> </div>
-        <div><%= hero.attackType %></div>
+<div class="show-grid-container">
+    <div class=" show-grid-item bio">
+        <div class="pAttribute"><%= hero.primaryAttribute %></div>
+        <div class="name"><%= hero.name %></div>
+        <div class="lore"><%= hero.lore %> </div>
+        <div class="bottom-bio">
+            <div class="atk-label">Attack Type</div>
+            <div class="atk-type"><%= hero.attackType %></div>
+            <div class="uName-label">Created by</div>
+            <div class="uName"><%= hero.userName.split(' ').splice(0,1).join() %> </div>
+            <div>
+                <% if (user?._id.equals(hero.user)) { %>
+                    <form action="/heros/<%= hero._id %>/edit" method="GET">
+                        <input type="submit" value="Edit Hero">
+                    </form>
+                    <form action="/heros/<%= hero._id %>?_method=DELETE" method="POST">
+                        <input type="submit" value="Delete Hero">
+                    </form>
+                <% } %>
+            </div>
+        </div>
     </div>
-    <br>
-    <div>
+    <div class="show-grid-item abilities">
         <div><%= hero.abilityOne %></div>
         <div><%= hero.abilityTwo %></div>
         <div><%= hero.abilityThree %></div>
         <div><%= hero.abilityFour %></div>
     </div>
-    
-    <div><%= hero.secondaryAttribute %></div>
+</div>
 
-    
-    <div><%= hero.userName.split(' ').splice(0,1).join() %> </div>
-    <div>
-        <% if (user?._id.equals(hero.user)) { %>
-            <form action="/heros/<%= hero._id %>/edit" method="GET">
-                <button type="submit">Edit Hero</button>
-            </form>
-            <form action="/heros/<%= hero._id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
+<div class="comment-container">
+    <div class="comments">
+        <% if (hero.comments.length) { %>
+            <h3>Comments</h3>
+            <% hero.comments.forEach(comment => { %>
+                <div>
+                    <div class="comment"><%= comment.comment %></div>
+                    <br>
+                    <div><%= comment.userName.split(' ').splice(0,1).join() %></div>
+                    <div><%= comment.createdAt.toLocaleDateString() %></div>
+                </div>
+                <br>
+                <% if (user?._id.equals(comment.user)) { %>
+                    <form action="/comments/<%= comment._id %>?_method=DELETE" method="post">
+                        <input type="submit" value="Delete comment">
+                    </form>
+                    <br><br>
+                <% } %>
+            <% }) %>
+        <% } else { %>
+            <h4>No Comments</h4>
+        <% } %>
+    </div>
+
+    <div class="comment-box">
+        <% if (user) { %>
+            <form id="add-comment-form" action="/heros/<%= hero._id %>/comments" method="post">
+                <textarea name="comment" id="" cols="30" rows="5" placeholder="Leave a comment!"></textarea>
+                <br>
+                <input type="submit" value="Add Comment">
             </form>
         <% } %>
     </div>
 </div>
-    <tr>
 
-    </tr>
-</section>
-<br>
-<br>
-
-<section>
-    <% if (user) { %>
-        <h2>Comments</h2>
-        <form id="add-comment-form" action="/heros/<%= hero._id %>/comments" method="post">
-            <label>Leave a comment!</label>
-            <br>
-
-            <textarea name="comment" id="" cols="30" rows="5"></textarea>
-            <input type="submit" value="Add Comment">
-        </form>
-        
-    <% } %>
-</section>
-
-<section>
-    <% if (hero.comments.length) { %>
-        <% hero.comments.forEach(comment => { %>
-            <div>
-                <div><%= comment.comment %></div>
-                <div><%= comment.userName.split(' ').splice(0,1).join() %></div>
-                <div><%= comment.createdAt.toLocaleDateString() %></div>
-            </div>
-            <br>
-            <% if (user?._id.equals(comment.user)) { %>
-                <form action="/comments/<%= comment._id %>?_method=DELETE" method="post">
-                    <input type="submit" value="Delete comment">
-                </form>
-             
-            <% } %>
-        <% }) %>
-    <% } else { %>
-        <h4>No Comments</h4>
-    <% } %>
-         
-</section>
 
 <%- include('../partials/footer') %>

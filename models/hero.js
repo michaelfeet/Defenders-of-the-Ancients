@@ -10,7 +10,18 @@ const commentSchema = new mongoose.Schema(
     {
       timestamps: true,
     }
-  );
+);
+
+// const imageSchema = new mongoose.Schema({
+//     name: String,
+//     desc: String,
+//     img:
+//     {
+//         data: Buffer,
+//         contentType: String
+//     }
+// });
+
 
 const heroSchema = new mongoose.Schema(
     {
@@ -42,6 +53,7 @@ const heroSchema = new mongoose.Schema(
             type: String,
         },
         comments: [commentSchema],
+        // image: imageSchema,
         user: {
             type: mongoose.Schema.Types.ObjectId, 
             ref: 'User', 
