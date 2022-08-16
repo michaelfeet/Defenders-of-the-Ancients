@@ -1,7 +1,6 @@
 console.log('test')
 
 
-
 const $attribute = $(".attribute");
 $attribute.on("change", function () {
     let select = this,

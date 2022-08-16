@@ -28,6 +28,9 @@ const heroSchema = new mongoose.Schema(
         name: {
             type: String,
         },
+        image: {
+            type: String
+        },
         primaryAttribute: {
             type: String,
         },

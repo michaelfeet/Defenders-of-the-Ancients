@@ -1,7 +1,10 @@
 <%- include('../partials/header') %>
 <div class="show-grid-container">
     <div class=" show-grid-item bio">
-        <div class="pAttribute"><%= hero.primaryAttribute %></div>
+        <img src="https://i.imgur.com/z38xvNa.png" alt="" class="<%= hero.primaryAttribute == 'Agility' ?  'active' : 'hidden'%>">
+        <img src="https://i.imgur.com/3i9DTpH.png" alt="" class="<%= hero.primaryAttribute == 'Intelligence' ? 'active' : 'hidden'%>">
+        <img src="https://i.imgur.com/2tB2qA7.png" alt="" class="<%= hero.primaryAttribute == 'Strength' ? 'active' : 'hidden'%>">
+        <span class="pAttribute"><%= hero.primaryAttribute %></span>
         <div class="name"><%= hero.name %></div>
         <div class="lore"><%= hero.lore %> </div>
         <div class="bottom-bio">
@@ -21,13 +24,22 @@
             </div>
         </div>
     </div>
-    <div class="show-grid-item abilities">
+    
+    <div class="right">
+        <div class="right-image">
+            <img src="<%= hero.image %>" alt="">
+        </div>
+
+        <div class="abilities">
         <div><%= hero.abilityOne %></div>
         <div><%= hero.abilityTwo %></div>
         <div><%= hero.abilityThree %></div>
         <div><%= hero.abilityFour %></div>
+        </div>
     </div>
 </div>
+
+
 
 <div class="comment-container">
     <div class="comments">
@@ -63,6 +75,8 @@
         <% } %>
     </div>
 </div>
+
+
 
 
 <%- include('../partials/footer') %>

@@ -38,18 +38,28 @@ function createHero(req, res) {
     // }
 
     // req.body.image = image
+
+    // if(req.body.primaryAttribute === 'Agility') {
+    //     req.body.primaryAttributeImage === 'https://i.imgur.com/z38xvNa.png'
+    // }else if(req.body.primaryAttribute === 'Intelligence') {
+    //     req.body.primaryAttributeImage === 'https://i.imgur.com/3i9DTpH.png'
+    // }else if(req.body.primaryAttribute === 'Strength') {
+    //     req.body.primaryAttributeImage === 'https://i.imgur.com/2tB2qA7.png'
+    // }
     
 
     Hero.create(req.body, function(err, heroDoc){        
         if (err) {
             return res.render("heros/new.ejs");
         }
+        console.log(req.body)
         res.redirect(`/heros/${heroDoc._id}`);
     })
 }
 
 function showHero(req, res) {
     Hero.findById(req.params.id, function(err, heroDoc) {
+        console.log(heroDoc)
         res.render('heros/show', {
             hero: heroDoc
         })
