@@ -15,10 +15,10 @@
             <div>
                 <% if (user?._id.equals(hero.user)) { %>
                     <form action="/heros/<%= hero._id %>/edit" method="GET">
-                        <input type="submit" value="Edit Hero">
+                        <input type="submit" value="Edit" class="edit-btn">
                     </form>
                     <form action="/heros/<%= hero._id %>?_method=DELETE" method="POST">
-                        <input type="submit" value="Delete Hero">
+                        <input type="submit" value="Delete" class="delete-btn">
                     </form>
                 <% } %>
             </div>
@@ -30,11 +30,138 @@
             <img src="<%= hero.image %>" alt="">
         </div>
 
-        <div class="abilities">
-        <div><%= hero.abilityOne %></div>
-        <div><%= hero.abilityTwo %></div>
-        <div><%= hero.abilityThree %></div>
-        <div><%= hero.abilityFour %></div>
+
+
+        <!-- <div class="abilities">
+            <div class="ability ab1">
+                <img src="https://i.imgur.com/pxemOj8.png" alt="">
+                <div class="<%= hero.abilityOne ? 'visible' : 'hidden' %>">
+                    <div><%= hero.abilityOne %></div><br>
+                    <div><%= hero.ab1Name %></div><br>
+                    <div><%= hero.ab1Desc %></div>
+                </div>
+            </div>
+
+            <div class="ability ab2">
+                <img src="https://i.imgur.com/hWgcHoa.png" alt="">
+                <div class="<%= hero.abilityTwo ? 'visible' : 'hidden' %>">
+                    <div><%= hero.abilityTwo %></div><br>
+                    <div><%= hero.ab2Name %></div><br>
+                    <div><%= hero.ab2Desc %></div>
+                </div>
+            </div>
+
+            <div class="ability ab3">
+                <img src="https://i.imgur.com/ZOC5wq8.png" alt="">
+                <div class="<%= hero.abilityThree ? 'visible' : 'hidden' %>">
+                    <div><%= hero.abilityThree %></div><br>
+                    <div><%= hero.ab3Name %></div><br>
+                    <div><%= hero.ab3Desc %></div>
+                </div>
+            </div>
+
+            <div class="ability ab4">
+                <img src="https://i.imgur.com/OWY1q7S.png" alt="">
+                <div class="<%= hero.abilityFour ? 'visible' : 'hidden' %>">
+                    <div><%= hero.abilityFour %></div><br>
+                    <div><%= hero.ab4Name %></div><br>
+                    <div><%= hero.ab4Desc %></div>
+                </div>
+            </div> -->
+
+        <!-- <div class="abilities">
+            <div class="ability ab1">
+                <img src="https://i.imgur.com/pxemOj8.png" alt="">
+                <div class="hidden-ab">
+                    <div>
+                        <div><%= hero.abilityOne %></div><br>
+                        <div><%= hero.ab1Name %></div><br>
+                        <div><%= hero.ab1Desc %></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ability ab2">
+                <img src="https://i.imgur.com/hWgcHoa.png" alt="">
+                <div class="hidden-ab">
+                    <div>
+                        <div><%= hero.abilityTwo %></div><br>
+                    <div><%= hero.ab2Name %></div><br>
+                    <div><%= hero.ab2Desc %></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ability ab3">
+                <img src="https://i.imgur.com/ZOC5wq8.png" alt="">
+                <div class="hidden-ab">
+                    <div>
+                        <div><%= hero.abilityThree %></div><br>
+                        <div><%= hero.ab3Name %></div><br>
+                        <div><%= hero.ab3Desc %></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ability ab4">
+                <img src="https://i.imgur.com/OWY1q7S.png" alt="">
+                <div class="hidden-ab">
+                    <div>
+                        <div><%= hero.abilityFour %></div><br>
+                        <div><%= hero.ab4Name %></div><br>
+                        <div><%= hero.ab4Desc %></div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="abilities">
+            <div class="ability ab1">
+                <a href="#" class="show_hide"><img src="https://i.imgur.com/pxemOj8.png"></a>
+                <!-- <img src="https://i.imgur.com/pxemOj8.png" alt=""> -->
+                <div class="slidingDiv">
+                    <div>
+                        <div><%= hero.abilityOne %></div><br>
+                        <div><%= hero.ab1Name %></div><br>
+                        <div><%= hero.ab1Desc %></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ability ab2">
+                <a href="#" class="show_hide"><img src="https://i.imgur.com/hWgcHoa.png"></a>
+                <!-- <img src="https://i.imgur.com/hWgcHoa.png" alt=""> -->
+                <div class="slidingDiv">
+                    <div>
+                        <div><%= hero.abilityTwo %></div><br>
+                    <div><%= hero.ab2Name %></div><br>
+                    <div><%= hero.ab2Desc %></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ability ab3">
+                <a href="#" class="show_hide"><img src="https://i.imgur.com/ZOC5wq8.png"></a>
+                <!-- <img src="https://i.imgur.com/ZOC5wq8.png" alt=""> -->
+                <div class="slidingDiv">
+                    <div>
+                        <div><%= hero.abilityThree %></div><br>
+                        <div><%= hero.ab3Name %></div><br>
+                        <div><%= hero.ab3Desc %></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ability ab4">
+                <a href="#" class="show_hide"><img src="https://i.imgur.com/OWY1q7S.png"></a>
+                <!-- <img src="https://i.imgur.com/OWY1q7S.png" alt=""> -->
+                <div class="slidingDiv">
+                    <div>
+                        <div><%= hero.abilityFour %></div><br>
+                        <div><%= hero.ab4Name %></div><br>
+                        <div><%= hero.ab4Desc %></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -44,7 +171,7 @@
 <div class="comment-container">
     <div class="comments">
         <% if (hero.comments.length) { %>
-            <h3>Comments</h3>
+            <h2>Comments</h2>
             <% hero.comments.forEach(comment => { %>
                 <div>
                     <div class="comment"><%= comment.comment %></div>
@@ -55,7 +182,7 @@
                 <br>
                 <% if (user?._id.equals(comment.user)) { %>
                     <form action="/comments/<%= comment._id %>?_method=DELETE" method="post">
-                        <input type="submit" value="Delete comment">
+                        <input type="submit" value="Delete" class="delete-btn">
                     </form>
                     <br><br>
                 <% } %>
@@ -70,7 +197,7 @@
             <form id="add-comment-form" action="/heros/<%= hero._id %>/comments" method="post">
                 <textarea name="comment" id="" cols="30" rows="5" placeholder="Leave a comment!"></textarea>
                 <br>
-                <input type="submit" value="Add Comment">
+                <input type="submit" value="Add Comment" class="add-comment">
             </form>
         <% } %>
     </div>

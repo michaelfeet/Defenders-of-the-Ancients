@@ -43,14 +43,38 @@ const heroSchema = new mongoose.Schema(
         abilityOne: {
             type: String,
         },
+        ab1Name: {
+            type: String
+        },
+        ab1Desc: {
+            type: String
+        },
         abilityTwo: {
             type: String,
+        },
+        ab2Name: {
+            type: String
+        },
+        ab2Desc: {
+            type: String
         },
         abilityThree: {
             type: String,
         },
+        ab3Name: {
+            type: String
+        },
+        ab3Desc: {
+            type: String
+        },
         abilityFour: {
             type: String,
+        },
+        ab4Name: {
+            type: String
+        },
+        ab4Desc: {
+            type: String
         },
         lore: {
             type: String,

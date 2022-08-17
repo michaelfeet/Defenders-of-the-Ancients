@@ -1,28 +1,22 @@
 <%- include('../partials/header') %>
-<div class="home">
-    <h1 class="home">Defend the Ancients by helping IceFrog create the next Hero</h1>
 
+<div class="home">
+
+    <h1 class="">Defenders of the Ancients</h1>
+    <h3>With the Austin Major Complete and The International 2022 <br> around the corner, the Battle Pass has still not been released. <br> Help IceFrog create the next Hero and release the Battle Pass</h3>
+
+    
     <% if (user) { %>
-        <a href="/heros/new"><button>Create Hero</button></a>
+        <a href="/heros/new"><input type="submit" value="Create Hero!" class="home-btn"></a>
     <% } else {  %>
-        <a href="/auth/google" class="login"><button>Get Started!</button></a>
+        <a href="/auth/google" class="login"><input type="submit" value="Log In To Get Started" class="home-btn"></a>
     <% } %> 
-    
-    <br>
-    
-    
+
     <div class="home-grid-container">
         <% heros.forEach(hero => { %>
             <div class="home-grid-item">
+                <a href="/heros/<%= hero._id %>"><img src="<%= hero.image %>" alt=""></a>
                 <div><a href="/heros/<%= hero._id %>"><%= hero.name %></div></a>
-                <!-- <div><%= hero.attackType %></div>
-                <div><%= hero.primaryAttribute %></div>
-                <div><%= hero.secondaryAttribute %></div>
-                <div><%= hero.abilityOne %></div>
-                <div><%= hero.abilityTwo %></div>
-                <div><%= hero.abilityThree %></div>
-                <div><%= hero.abilityFour %></div> -->
-                <!-- <div><%= hero.lore %> </div> -->
             </div>
         <% }) %>
     </div>
