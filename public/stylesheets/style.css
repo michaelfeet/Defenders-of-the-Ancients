@@ -29,7 +29,17 @@ textarea {
 }
 
 .hidden {
-  display: none;
+  display: none
+}
+
+.hide-ability-desc {
+  visibility: hidden;
+  /* text-align: center; */
+  max-width: 80%;
+  font-size: 20px;
+}
+.ability img:hover + .hide-ability-desc {
+  visibility: visible;
 }
 
 html {
@@ -194,14 +204,17 @@ nav img:hover {
 }
 
 .abilities {
-  display: flex;
-  flex-direction: row;
+  /* border: 1px solid white; */
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
   padding-top: 100px;
+  width: 100%;
 }
 
 .ability {
-  max-height: auto;
-  padding: 0 15px;
+  /* border: 1px solid black; */
+  width: 100%;
+  /* padding: 0 15px; */
 }
 
 .comment-container {
