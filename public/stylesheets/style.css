@@ -86,10 +86,13 @@ nav {
 
 nav img {
   margin-right: 40px;
+  border-radius: 10px;
+
 }
 
 nav img:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
 }
 
 .nav-text {
@@ -98,6 +101,8 @@ nav img:hover {
 }
 .nav-text:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+
 }
 
 .log {
@@ -128,15 +133,20 @@ nav img:hover {
   text-align: center;
   height: 250px;
   width: 250px;
+  order: 1;
 }
 
 .grid-item img {
   max-width: 100%;
   max-height: auto;
+  border-radius: 10px;
+
 }
 
 .grid-item:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+
 }
 
 .show-grid-container, .comment-container {
