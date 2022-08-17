@@ -1,165 +1,162 @@
 <%- include('../partials/header') %>
 
-<h1 class="new">IceFrog, Please!</h1>
+<h1 class="new-h1">IceFrog, Please!</h1>
 
-    <form action="/heros" class="new-form" method="post">
-        <div class="grid">
-            <div class="module">
-                <label>Hero Name
-                    <input type="text" name="name" placeholder="Hero Name" required>
-                </label><br>
-            
-                <label>Upload Image
-                    <input type="text" name="image" placeholder="Imgur Link Please" required>
-                </label><br>
-            
-                <label>Primary Attribute:
-                    <select id="primaryAttribute" name="primaryAttribute" class="attribute" required>
-                        <option hidden disabled selected value>Primary Attribute</option>
-                        <option value="Agility">Agility</option>
-                        <option value="Intelligence">Intelligence</option>
-                        <option value="Strength">Strength</option>
-                    </select>
-                </label><br>
-            
-                <label>Secondary Attribute:
-                    <select id="secondaryAttribute" name="secondaryAttribute" class="attribute" required>
-                        <option hidden disabled selected value>Primary Attribute</option>
-                        <option value="Agility">Agility</option>
-                        <option value="Intelligence">Intelligence</option>
-                        <option value="Strength">Strength</option>
-                    </select>
-                </label><br>
-            
-                <label>Attack Type:
-                    <select name="attackType" id="attackType" required>
-                        <option hidden disabled selected value>Attack Type</option>
-                        <option value="Melee">Melee</option>
-                        <option value="Ranged">Ranged</option>
-                    </select>
-                </label><br>
-            </div>
-    
-            <div class="module">
-                <div class="lore-container">
-                    <label>Lore:
-                        <br>
-                        <textarea name="lore" id="lore" cols="35" rows="5" required></textarea>
-                    </label><br>
-                </div>
-            </div>
-    
-            <div class="module">
-                <label> Ability 1:
-                    <select name="abilityOne" id="abilityOne" class="ability" required>
-                        <option hidden disabled selected value>Ability 1</option>
-                        <option value="Ally Stats Buff">Ally Stats Buff</option>
-                        <option value="Attack Modifier">Attack Modifier</option>
-                        <option value="Burst Damage">Burst Damage</option>
-                        <option value="Enemy Stats Debuff">Enemy Stats Debuff</option>
-                        <option value="Heal Ally">Heal Ally</option>
-                        <option value="Micro Units">Micro Units</option>
-                        <option value="Slow Enemy">Slow Enemy</option>
-                        <option value="Stun Enemy">Stun Enemy</option>
-                        <option value="Target Damage Over Time">Target Damage Over Time</option>
-                        <option value="Target Area Of Effect">Target Area Of Effect</option>
-                    </select>
-                </label><br>
-            
-                <label>Ability Name
-                    <input type="text" name="ab1Name">
-                </label><br>
-                
-                <label>Description
-                    <textarea name="ab1Desc" id="" cols="30" rows="5"></textarea>
-                </label><br>
-                
-            </div>
-    
-            <div class="module">
-                <label> Ability 2:
-                    <select name="abilityTwo" id="abilityTwo" class="ability" required>
-                        <option hidden disabled selected value>Ability 2</option>
-                        <option value="Ally Stats Buff">Ally Stats Buff</option>
-                        <option value="Attack Modifier">Attack Modifier</option>
-                        <option value="Burst Damage">Burst Damage</option>
-                        <option value="Enemy Stats Debuff">Enemy Stats Debuff</option>
-                        <option value="Heal Ally">Heal Ally</option>
-                        <option value="Micro Units">Micro Units</option>
-                        <option value="Slow Enemy">Slow Enemy</option>
-                        <option value="Stun Enemy">Stun Enemy</option>
-                        <option value="Target Damage Over Time">Target Damage Over Time</option>
-                        <option value="Target Area Of Effect">Target Area Of Effect</option>
-                    </select>
-                </label><br>
-            
-                <label>Ability Name
-                    <input type="text" name="ab2Name">
-                </label><br>
-                
-                <label>Description
-                    <textarea name="ab2Desc" id="" cols="30" rows="5"></textarea>
-                </label><br>
-            </div>
-
-            <div class="module">
-                <label> Ability 3:
-                    <select name="abilityThree" id="abilityThree" class="ability" required>
-                        <option hidden disabled selected value>Ability 3</option>
-                        <option value="Ally Stats Buff">Ally Stats Buff</option>
-                        <option value="Attack Modifier">Attack Modifier</option>
-                        <option value="Burst Damage">Burst Damage</option>
-                        <option value="Enemy Stats Debuff">Enemy Stats Debuff</option>
-                        <option value="Heal Ally">Heal Ally</option>
-                        <option value="Micro Units">Micro Units</option>
-                        <option value="Slow Enemy">Slow Enemy</option>
-                        <option value="Stun Enemy">Stun Enemy</option>
-                        <option value="Target Damage Over Time">Target Damage Over Time</option>
-                        <option value="Target Area Of Effect">Target Area Of Effect</option>
-                    </select>
-                </label><br>
-            
-                <label>Ability Name
-                    <input type="text" name="ab3Name">
-                </label><br>
-                
-                <label>Description
-                    <textarea name="ab3Desc" id="" cols="30" rows="5"></textarea>
-                </label><br>
-            </div>
-  
-            <div class="module">
-                <label> Ability 4:
-                    <select name="abilityFour" id="abilityFour" class="ability" required>
-                        <option hidden disabled selected value>Ability 4</option>
-                        <option value="Ally Stats Buff">Ally Stats Buff</option>
-                        <option value="Attack Modifier">Attack Modifier</option>
-                        <option value="Burst Damage">Burst Damage</option>
-                        <option value="Enemy Stats Debuff">Enemy Stats Debuff</option>
-                        <option value="Heal Ally">Heal Ally</option>
-                        <option value="Micro Units">Micro Units</option>
-                        <option value="Slow Enemy">Slow Enemy</option>
-                        <option value="Stun Enemy">Stun Enemy</option>
-                        <option value="Target Damage Over Time">Target Damage Over Time</option>
-                        <option value="Target Area Of Effect">Target Area Of Effect</option>
-                    </select>
-                </label><br>
-            
-                <label>Ability Name
-                    <input type="text" name="ab4Name">
-                </label><br>
-                
-                <label>Description
-                    <textarea name="ab4Desc" id="" cols="30" rows="5"></textarea>
-                </label><br>
-            </div>
-        </div>
+<form action="/heros" class="new-form" method="post">
+    <div class="new-grid-container">
+        <div class="new-grid-item">
+            <label>Hero Name <br>
+                <input type="text" name="name" placeholder="" required autocomplete="off">
+            </label><br><br>
         
-        <div class="button-holder">
-            <input type="submit" value="Submit Hero" class="new-submit">
+            <label>Upload Image <br>
+                <input type="text" name="image" placeholder="Imgur Link Please" required autocomplete="off">
+            </label><br><br>
+        
+            <label>Primary Attribute: <br>
+                <select id="primaryAttribute" name="primaryAttribute" class="attribute" required autocomplete="off">
+                    <option hidden disabled selected value></option>
+                    <option value="Agility">Agility</option>
+                    <option value="Intelligence">Intelligence</option>
+                    <option value="Strength">Strength</option>
+                </select>
+            </label><br><br>
+        
+            <label>Secondary Attribute: <br>
+                <select id="secondaryAttribute" name="secondaryAttribute" class="attribute" required autocomplete="off">
+                    <option hidden disabled selected value></option>
+                    <option value="Agility">Agility</option>
+                    <option value="Intelligence">Intelligence</option>
+                    <option value="Strength">Strength</option>
+                </select>
+            </label><br><br>
+        
+            <label>Attack Type: <br>
+                <select name="attackType" id="attackType" required autocomplete="off">
+                    <option hidden disabled selected value></option>
+                    <option value="Melee">Melee</option>
+                    <option value="Ranged">Ranged</option>
+                </select>
+            </label><br>
         </div>
-    </form>
 
+        <div class="new-grid-item">
+            <div class="lore-container">
+                <label>Lore <br>
+                    <textarea name="lore" id="lore" cols="30" rows="5" required></textarea autocomplete="off">
+                </label><br>
+            </div>
+        </div>
 
+        <div class="new-grid-item">
+            <label> Ability 1 <br>
+                <select name="abilityOne" id="abilityOne" class="ability" required autocomplete="off">
+                    <option hidden disabled selected value></option>
+                    <option value="Ally Stats Buff">Ally Stats Buff</option>
+                    <option value="Attack Modifier">Attack Modifier</option>
+                    <option value="Burst Damage">Burst Damage</option>
+                    <option value="Enemy Stats Debuff">Enemy Stats Debuff</option>
+                    <option value="Heal Ally">Heal Ally</option>
+                    <option value="Micro Units">Micro Units</option>
+                    <option value="Slow Enemy">Slow Enemy</option>
+                    <option value="Stun Enemy">Stun Enemy</option>
+                    <option value="Target Damage Over Time">Target Damage Over Time</option>
+                    <option value="Target Area Of Effect">Target Area Of Effect</option>
+                </select>
+            </label><br><br>
+        
+            <label>Ability Name <br>
+                <input type="text" name="ab1Name" autocomplete="off">
+            </label><br><br>
+            
+            <label>Description <br>
+                <textarea name="ab1Desc" id="" cols="30" rows="5"></textarea autocomplete="off">
+            </label><br>
+            
+        </div>
+
+        <div class="new-grid-item">
+            <label> Ability 2 <br>
+                <select name="abilityTwo" id="abilityTwo" class="ability" required autocomplete="off">
+                    <option hidden disabled selected value></option>
+                    <option value="Ally Stats Buff">Ally Stats Buff</option>
+                    <option value="Attack Modifier">Attack Modifier</option>
+                    <option value="Burst Damage">Burst Damage</option>
+                    <option value="Enemy Stats Debuff">Enemy Stats Debuff</option>
+                    <option value="Heal Ally">Heal Ally</option>
+                    <option value="Micro Units">Micro Units</option>
+                    <option value="Slow Enemy">Slow Enemy</option>
+                    <option value="Stun Enemy">Stun Enemy</option>
+                    <option value="Target Damage Over Time">Target Damage Over Time</option>
+                    <option value="Target Area Of Effect">Target Area Of Effect</option>
+                </select>
+            </label><br><br>
+        
+            <label>Ability Name <br>
+                <input type="text" name="ab2Name" autocomplete="off">
+            </label><br><br>
+            
+            <label>Description <br>
+                <textarea name="ab2Desc" id="" cols="30" rows="5"></textarea autocomplete="off">
+            </label><br>
+        </div>
+
+        <div class="new-grid-item">
+            <label> Ability 3 <br>
+                <select name="abilityThree" id="abilityThree" class="ability" required autocomplete="off">
+                    <option hidden disabled selected value></option>
+                    <option value="Ally Stats Buff">Ally Stats Buff</option>
+                    <option value="Attack Modifier">Attack Modifier</option>
+                    <option value="Burst Damage">Burst Damage</option>
+                    <option value="Enemy Stats Debuff">Enemy Stats Debuff</option>
+                    <option value="Heal Ally">Heal Ally</option>
+                    <option value="Micro Units">Micro Units</option>
+                    <option value="Slow Enemy">Slow Enemy</option>
+                    <option value="Stun Enemy">Stun Enemy</option>
+                    <option value="Target Damage Over Time">Target Damage Over Time</option>
+                    <option value="Target Area Of Effect">Target Area Of Effect</option>
+                </select>
+            </label><br><br>
+        
+            <label>Ability Name <br>
+                <input type="text" name="ab3Name" autocomplete="off">
+            </label><br><br>
+            
+            <label>Description <br>
+                <textarea name="ab3Desc" id="" cols="30" rows="5"></textarea autocomplete="off">
+            </label><br>
+        </div>
+
+        <div class="new-grid-item">
+            <label> Ability 4 <br>
+                <select name="abilityFour" id="abilityFour" class="ability" required autocomplete="off">
+                    <option hidden disabled selected value></option>
+                    <option value="Ally Stats Buff">Ally Stats Buff</option>
+                    <option value="Attack Modifier">Attack Modifier</option>
+                    <option value="Burst Damage">Burst Damage</option>
+                    <option value="Enemy Stats Debuff">Enemy Stats Debuff</option>
+                    <option value="Heal Ally">Heal Ally</option>
+                    <option value="Micro Units">Micro Units</option>
+                    <option value="Slow Enemy">Slow Enemy</option>
+                    <option value="Stun Enemy">Stun Enemy</option>
+                    <option value="Target Damage Over Time">Target Damage Over Time</option>
+                    <option value="Target Area Of Effect">Target Area Of Effect</option>
+                </select>
+            </label><br><br>
+        
+            <label>Ability Name <br>
+                <input type="text" name="ab4Name" autocomplete="off">
+            </label><br><br>
+            
+            <label>Description <br>
+                <textarea name="ab4Desc" id="" cols="30" rows="5"></textarea autocomplete="off">
+            </label><br>
+        </div>
+    </div>
+    
+    <div class="button-holder">
+        <input type="submit" value="Submit Hero" class="new-btn">
+    </div>
+</form>
 
 <%- include('../partials/footer') %>
