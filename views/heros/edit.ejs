@@ -4,7 +4,7 @@
         <%= hero.name %>
     </h1>
 
-    <form action="/heros" class="new-form" method="post">
+    <form action="/heros/<%= hero.id %>?_method=PUT" id="edit-form new-form" method="post">
         <div class="new-grid-container">
             <div class="new-grid-item">
                 <label>Hero Name<br>
