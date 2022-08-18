@@ -1,6 +1,7 @@
 # Defenders Of The Ancients
 
-With the Austin Major Complete and The International 2022 around the corner, the Battle Pass has still not been released. Help IceFrog create the next Hero and release the Battle Pass.
+This app allows you to create and share your ideas for the future Heros of DOTA2. Contribute to the discussion on Hero submissions and help IceFrog defend high ground.
+
 
 ![Imgur](https://i.imgur.com/bSG1848.png)
 
