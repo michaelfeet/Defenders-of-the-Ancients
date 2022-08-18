@@ -16,7 +16,7 @@
         <% heros.forEach(hero=> { %>
             <div class="grid-item">
                 <a href="/heros/<%= hero._id %>"><img src="<%= hero.image %>" alt=""></a>
-                <div><a href="/heros/<%= hero._id %>">
+                <div class="grid-item-text"><a href="/heros/<%= hero._id %>">
                         <%= hero.name %>
                 </div></a>
             </div>
