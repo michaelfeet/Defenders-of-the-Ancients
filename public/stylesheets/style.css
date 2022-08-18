@@ -368,3 +368,7 @@ h1.edit-hero {
   /* [OPTIONAL] add, see above */
   height: 200px;
 }
+
+footer{
+  padding-top: 100px;
+}
