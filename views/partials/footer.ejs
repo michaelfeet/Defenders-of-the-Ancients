@@ -1,4 +1,15 @@
-<footer></footer>
+<footer>
+    <nav>
+        <a href="/heros"><img src="https://i.imgur.com/LGlL8MN.jpg" title="source: imgur.com" /></a>
+        <a class="nav-text" href="#top">Back to Top</a>
+        <% if (user) { %>
+            <a class="nav-text" href="/heros/new">Create Hero</a>
+            <a class="nav-text log" href="/logout">Log Out</a>
+            <% } else { %>
+                <a class="nav-text log" href="/auth/google" class="login">Log In</a>
+                <% } %>
+    </nav>
+</footer>
 
 </main>
 </body>

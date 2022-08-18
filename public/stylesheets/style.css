@@ -122,9 +122,9 @@ nav img:hover {
 .grid-item {
   position: relative;
   padding: 20px 0;
-  margin: 33px;
+  margin: 40px;
   font-size: 30px;
-  height: 275px;
+  height: 250px;
   width: 250px;
   order: 1;
 }
@@ -143,10 +143,10 @@ nav img:hover {
 }
 
 .grid-item-text a {
-  position:absolute;
-  width:100%;
-  bottom:0;
-  text-align:center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
 }
 
 .show-grid-container,
@@ -314,7 +314,7 @@ h1.edit-hero {
 }
 
 .home-btn {
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
   width: 100%;
   height: 75px;
   font-size: 24px;
@@ -378,6 +378,6 @@ h1.edit-hero {
   height: 200px;
 }
 
-footer{
+footer {
   padding-top: 100px;
 }
