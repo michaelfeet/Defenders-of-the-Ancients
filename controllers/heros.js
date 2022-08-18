@@ -4,15 +4,15 @@ module.exports = {
     index,
     new: newHero,
     create: createHero,
-    show:showHero,
+    show: showHero,
     delete: deleteHero,
     edit: editHero,
     update: updateHero
 }
 
 function index(req, res) {
-    Hero.find({}, null, {sort: {createdAt: 'desc'}}, function(err, allHeros) {
-        if(err) {
+    Hero.find({}, null, { sort: { createdAt: 'desc' } }, function (err, allHeros) {
+        if (err) {
             res.send('error all heros')
         }
         res.render('heros/index.ejs', {
@@ -30,7 +30,7 @@ function createHero(req, res) {
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar
 
-    Hero.create(req.body, function(err, heroDoc){        
+    Hero.create(req.body, function (err, heroDoc) {
         if (err) {
             return res.render("heros/new.ejs");
         }
@@ -39,7 +39,7 @@ function createHero(req, res) {
 }
 
 function showHero(req, res) {
-    Hero.findById(req.params.id, function(err, heroDoc) {
+    Hero.findById(req.params.id, function (err, heroDoc) {
         res.render('heros/show', {
             hero: heroDoc
         })
@@ -47,13 +47,13 @@ function showHero(req, res) {
 }
 
 function deleteHero(req, res) {
-    Hero.findByIdAndDelete(req.params.id, function(err, heroDoc){
+    Hero.findByIdAndDelete(req.params.id, function (err, heroDoc) {
         res.redirect('/heros')
     })
 }
 
 function editHero(req, res) {
-    Hero.findById(req.params.id, function(err, heroDoc) {
+    Hero.findById(req.params.id, function (err, heroDoc) {
         res.render('heros/edit.ejs', {
             hero: heroDoc
         })
@@ -61,8 +61,8 @@ function editHero(req, res) {
 }
 
 function updateHero(req, res) {
-    Hero.findByIdAndUpdate(req.params.id, req.body, function(err, heroDoc) {
-        heroDoc.save(function(err) {
+    Hero.findByIdAndUpdate(req.params.id, req.body, function (err, heroDoc) {
+        heroDoc.save(function (err) {
             res.redirect(`/heros/${heroDoc._id}`)
         })
     })

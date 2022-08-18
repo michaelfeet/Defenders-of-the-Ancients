@@ -6,13 +6,13 @@ module.exports = {
 }
 
 function createComment(req, res) {
-    Hero.findById(req.params.id, function(err, heroDoc) {
+    Hero.findById(req.params.id, function (err, heroDoc) {
         req.body.user = req.user._id
         req.body.userName = req.user.name
         req.body.userAvatar = req.user.avatar
 
         heroDoc.comments.push(req.body)
-        heroDoc.save(function(err) {
+        heroDoc.save(function (err) {
             res.redirect(`/heros/${req.params.id}`)
         })
     })
@@ -24,8 +24,8 @@ function deleteComment(req, res) {
             'comments._id': req.params.id,
             'comments.user': req.user._id
         },
-        function(err, heroDoc) {
-            if(!heroDoc) {
+        function (err, heroDoc) {
+            if (!heroDoc) {
                 return res.redirect('/heros')
             }
             heroDoc.comments.remove(req.params.id)

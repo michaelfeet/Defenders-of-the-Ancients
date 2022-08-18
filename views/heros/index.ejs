@@ -1,23 +1,26 @@
 <%- include('../partials/header') %>
 
-<h1 class="index-h1">Defenders of the Ancients</h1>
-<h3 class="index-h3">With the Austin Major Complete and The International 2022 <br> around the corner, the Battle Pass has still not been released. <br> Help IceFrog create the next Hero and release the Battle Pass</h3>
+    <h1 class="index-h1">Defenders of the Ancients</h1>
+    <h3 class="index-h3">With the Austin Major Complete and The International 2022 <br> around the corner, the Battle
+        Pass has still not been released. <br> Help IceFrog create the next Hero and release the Battle Pass</h3>
 
-<div class="btn-container">
-    <% if (user) { %>
-        <a href="/heros/new"><input type="submit" value="Create Hero!" class="home-btn"></a>
-    <% } else {  %>
-        <a href="/auth/google" ><input type="submit" value="Log In To Get Started" class="login home-btn"></a>
-    <% } %> 
-</div>
+    <div class="btn-container">
+        <% if (user) { %>
+            <a href="/heros/new"><input type="submit" value="Create Hero!" class="home-btn"></a>
+            <% } else { %>
+                <a href="/auth/google"><input type="submit" value="Log In To Get Started" class="login home-btn"></a>
+                <% } %>
+    </div>
 
-<div class="grid-container">
-    <% heros.forEach(hero => { %>
-        <div class="grid-item">
-            <a href="/heros/<%= hero._id %>"><img src="<%= hero.image %>" alt=""></a>
-            <div><a href="/heros/<%= hero._id %>"><%= hero.name %></div></a>
-        </div>
-    <% }) %>
-</div>
-    
-<%- include('../partials/footer') %>
+    <div class="grid-container">
+        <% heros.forEach(hero=> { %>
+            <div class="grid-item">
+                <a href="/heros/<%= hero._id %>"><img src="<%= hero.image %>" alt=""></a>
+                <div><a href="/heros/<%= hero._id %>">
+                        <%= hero.name %>
+                </div></a>
+            </div>
+            <% }) %>
+    </div>
+
+    <%- include('../partials/footer') %>

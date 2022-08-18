@@ -1,49 +1,50 @@
 <%- include('../partials/header') %>
 
-<h1 class="new-h1">IceFrog, Please!</h1>
+    <h1 class="new-h1">IceFrog, Please!</h1>
 
-<form action="/heros" class="new-form" method="post">
-    <div class="new-grid-container">
-        <div class="new-grid-item">
-            <label>Hero Name <br>
-                <input type="text" name="name" placeholder="" required autocomplete="off">
-            </label><br><br>
-        
-            <label>Upload Image <br>
-                <input type="text" name="image" placeholder="Imgur Link Please" required autocomplete="off">
-            </label><br><br>
-        
-            <label>Primary Attribute: <br>
-                <select id="primaryAttribute" name="primaryAttribute" class="attribute" required autocomplete="off">
-                    <option hidden disabled selected value></option>
-                    <option value="Agility">Agility</option>
-                    <option value="Intelligence">Intelligence</option>
-                    <option value="Strength">Strength</option>
-                </select>
-            </label><br><br>
-        
-            <label>Secondary Attribute: <br>
-                <select id="secondaryAttribute" name="secondaryAttribute" class="attribute" required autocomplete="off">
-                    <option hidden disabled selected value></option>
-                    <option value="Agility">Agility</option>
-                    <option value="Intelligence">Intelligence</option>
-                    <option value="Strength">Strength</option>
-                </select>
-            </label><br><br>
-        
-            <label>Attack Type: <br>
-                <select name="attackType" id="attackType" required autocomplete="off">
-                    <option hidden disabled selected value></option>
-                    <option value="Melee">Melee</option>
-                    <option value="Ranged">Ranged</option>
-                </select>
-            </label><br>
-        </div>
+    <form action="/heros" class="new-form" method="post">
+        <div class="new-grid-container">
+            <div class="new-grid-item">
+                <label>Hero Name <br>
+                    <input type="text" name="name" placeholder="" required autocomplete="off">
+                </label><br><br>
 
-        <div class="new-grid-item">
-            <div class="lore-container">
-                <label>Lore <br>
-                    <textarea name="lore" id="lore" cols="30" rows="5" required></textarea autocomplete="off">
+                <label>Upload Image <br>
+                    <input type="text" name="image" placeholder="Imgur Link Please" required autocomplete="off">
+                </label><br><br>
+
+                <label>Primary Attribute: <br>
+                    <select id="primaryAttribute" name="primaryAttribute" class="attribute" required autocomplete="off">
+                        <option hidden disabled selected value></option>
+                        <option value="Agility">Agility</option>
+                        <option value="Intelligence">Intelligence</option>
+                        <option value="Strength">Strength</option>
+                    </select>
+                </label><br><br>
+
+                <label>Secondary Attribute: <br>
+                    <select id="secondaryAttribute" name="secondaryAttribute" class="attribute" required
+                        autocomplete="off">
+                        <option hidden disabled selected value></option>
+                        <option value="Agility">Agility</option>
+                        <option value="Intelligence">Intelligence</option>
+                        <option value="Strength">Strength</option>
+                    </select>
+                </label><br><br>
+
+                <label>Attack Type: <br>
+                    <select name="attackType" id="attackType" required autocomplete="off">
+                        <option hidden disabled selected value></option>
+                        <option value="Melee">Melee</option>
+                        <option value="Ranged">Ranged</option>
+                    </select>
+                </label><br>
+            </div>
+
+            <div class="new-grid-item">
+                <div class="lore-container">
+                    <label>Lore <br>
+                        <textarea name="lore" id="lore" cols="30" rows="5" required></textarea autocomplete="off">
                 </label><br>
             </div>
         </div>

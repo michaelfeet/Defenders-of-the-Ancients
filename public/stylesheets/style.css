@@ -41,7 +41,8 @@ html {
   background-attachment: fixed;
 }
 
-input, textarea {
+input,
+textarea {
   font-family: 'Aboreto';
   font-size: 18px;
   text-align: center;
@@ -59,7 +60,8 @@ select {
   width: 80%;
 }
 
-html, a {
+html,
+a {
   color: rgba(210, 210, 210);
   text-decoration: none;
 }
@@ -99,7 +101,9 @@ nav img:hover {
   justify-content: baseline;
 }
 
-.index-h1, .index-h3, .new-h1 {
+.index-h1,
+.index-h3,
+.new-h1 {
   text-align: center;
 }
 
@@ -136,7 +140,8 @@ nav img:hover {
   border-radius: 10px;
 }
 
-.show-grid-container, .comment-container {
+.show-grid-container,
+.comment-container {
   margin: 75px 200px;
   display: flex;
   flex-direction: row;
@@ -151,7 +156,8 @@ nav img:hover {
   position: relative;
 }
 
-.pAttribute, .name {
+.pAttribute,
+.name {
   text-transform: uppercase;
 }
 
@@ -166,7 +172,7 @@ nav img:hover {
 }
 
 .lore {
-  overflow:auto;
+  overflow: auto;
   max-width: 80%;
   max-height: 130px;
   font-size: 23px;
@@ -184,7 +190,8 @@ nav img:hover {
   font-size: 20px;
 }
 
-.atk-label, .uName-label {
+.atk-label,
+.uName-label {
   font-size: 18px;
   color: grey;
 }
@@ -199,7 +206,8 @@ nav img:hover {
 .right-image {
   min-height: 350px;
 }
-.right-image img{
+
+.right-image img {
   max-width: 100%;
   max-height: 350px;
 }
@@ -218,6 +226,7 @@ nav img:hover {
 .ability-show img {
   width: 90px;
 }
+
 .ability-name {
   font-size: 24px;
 }
@@ -227,7 +236,7 @@ nav img:hover {
   padding-bottom: 200px;
 }
 
-.comment-container > div {
+.comment-container>div {
   width: 50%;
 }
 
@@ -237,7 +246,8 @@ nav img:hover {
   height: 60px;
 }
 
-h1.new, h1.edit-hero {
+h1.new,
+h1.edit-hero {
   text-align: center;
 }
 
@@ -260,7 +270,7 @@ h1.new, h1.edit-hero {
 }
 
 .lore-container {
-  padding-top: 30px; 
+  padding-top: 30px;
 }
 
 .button-holder {
@@ -273,7 +283,11 @@ h1.new, h1.edit-hero {
   margin-bottom: 200px;
 }
 
-.home-btn, .edit-btn, .delete-btn, .new-btn, .comment-btn {
+.home-btn,
+.edit-btn,
+.delete-btn,
+.new-btn,
+.comment-btn {
   font: inherit;
   padding: 10px;
   background: rgba(10, 8, 7, .5);
@@ -281,7 +295,11 @@ h1.new, h1.edit-hero {
   text-align: center;
 }
 
-.home-btn:hover, .new-btn:hover, .edit-btn:hover, .delete-btn:hover, .comment-btn:hover {
+.home-btn:hover,
+.new-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover,
+.comment-btn:hover {
   background: rgba(10, 10, 10, 0);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -299,7 +317,8 @@ h1.new, h1.edit-hero {
   font-size: 25px;
 }
 
-.edit-btn, .delete-btn {
+.edit-btn,
+.delete-btn {
   font-size: 14px;
   width: 75px;
 }
@@ -308,22 +327,29 @@ h1.new, h1.edit-hero {
   width: 200px;
 }
 
-.content1, .content2, .content3, .content4 {
-    /*  display: none;  remove */
-    opacity: 0; /* add */
-    transition: all ; /* add */
-    position: absolute;
-    left: 550px;
-    right: 0px;
-    top: 900px;
-    bottom: 0px;
-    margin: auto;
-    width: 0; /* [OPTIONAL] modify from 300px */
-    height: 0; /* ditto */
-    background-color: rgba(0, 0, 0, 0);
-    text-align: center;
-    overflow: auto;
-    max-height: 200px;
+.content1,
+.content2,
+.content3,
+.content4 {
+  /*  display: none;  remove */
+  opacity: 0;
+  /* add */
+  transition: all;
+  /* add */
+  position: absolute;
+  left: 550px;
+  right: 0px;
+  top: 900px;
+  bottom: 0px;
+  margin: auto;
+  width: 0;
+  /* [OPTIONAL] modify from 300px */
+  height: 0;
+  /* ditto */
+  background-color: rgba(0, 0, 0, 0);
+  text-align: center;
+  overflow: auto;
+  max-height: 200px;
 }
 
 .trigger1:hover+.content1,
@@ -336,7 +362,9 @@ h1.new, h1.edit-hero {
 .trigger4:focus+.content4 {
   /* add, for persistent display of content. click elsewhere to close again */
   /*  display: block; remove */
-  opacity: 1; /* add */
-  width: 500px; /* [OPTIONAL] add, see above */
+  opacity: 1;
+  /* add */
+  width: 500px;
+  /* [OPTIONAL] add, see above */
   height: 200px;
 }

@@ -1,17 +1,29 @@
 <%- include('../partials/header') %>
-<div class="show-grid-container">
-    <div class=" show-grid-item bio">
-        <img src="https://i.imgur.com/z38xvNa.png" alt="" class="<%= hero.primaryAttribute == 'Agility' ?  'active' : 'hidden'%>">
-        <img src="https://i.imgur.com/3i9DTpH.png" alt="" class="<%= hero.primaryAttribute == 'Intelligence' ? 'active' : 'hidden'%>">
-        <img src="https://i.imgur.com/2tB2qA7.png" alt="" class="<%= hero.primaryAttribute == 'Strength' ? 'active' : 'hidden'%>">
-        <span class="pAttribute"><%= hero.primaryAttribute %></span>
-        <div class="name"><%= hero.name %></div>
-        <div class="lore"><%= hero.lore %> </div>
-        <div class="bottom-bio">
-            <div class="atk-label">Attack Type</div>
-            <div class="atk-type"><%= hero.attackType %></div>
-            <div class="uName-label">Created by</div>
-            <div class="uName"><%= hero.userName.split(' ').splice(0,1).join() %> </div>
+    <div class="show-grid-container">
+        <div class=" show-grid-item bio">
+            <img src="https://i.imgur.com/z38xvNa.png" alt=""
+                class="<%= hero.primaryAttribute == 'Agility' ?  'active' : 'hidden'%>">
+            <img src="https://i.imgur.com/3i9DTpH.png" alt=""
+                class="<%= hero.primaryAttribute == 'Intelligence' ? 'active' : 'hidden'%>">
+            <img src="https://i.imgur.com/2tB2qA7.png" alt=""
+                class="<%= hero.primaryAttribute == 'Strength' ? 'active' : 'hidden'%>">
+            <span class="pAttribute">
+                <%= hero.primaryAttribute %>
+            </span>
+            <div class="name">
+                <%= hero.name %>
+            </div>
+            <div class="lore">
+                <%= hero.lore %>
+            </div>
+            <div class="bottom-bio">
+                <div class="atk-label">Attack Type</div>
+                <div class="atk-type">
+                    <%= hero.attackType %>
+                </div>
+                <div class="uName-label">Created by</div>
+                <div class="uName">
+                    <%= hero.userName.split(' ').splice(0,1).join() %> </div>
             <div>
                 <% if (user?._id.equals(hero.user)) { %>
                     <form action="/heros/<%= hero._id %>/edit" method="GET">
@@ -104,4 +116,4 @@
     </div>
 </div>
 
-<%- include('../partials/footer') %>
+<%- include(' ../partials/footer') %>

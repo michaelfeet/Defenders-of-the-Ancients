@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 
 const commentSchema = new mongoose.Schema(
     {
-      comment: String,
-      user: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true}, //< - we want to make sure a review is always tied to a user
-      userName: String,
-      userAvatar: String
+        comment: String,
+        user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, //< - we want to make sure a review is always tied to a user
+        userName: String,
+        userAvatar: String
     },
     {
-      timestamps: true,
+        timestamps: true,
     }
 );
 
@@ -27,7 +27,7 @@ const heroSchema = new mongoose.Schema(
             type: String,
         },
         attackType: {
-            type:String
+            type: String
         },
         abilityOne: {
             type: String,
@@ -70,8 +70,8 @@ const heroSchema = new mongoose.Schema(
         },
         comments: [commentSchema],
         user: {
-            type: mongoose.Schema.Types.ObjectId, 
-            ref: 'User', 
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
         },
         userName: {
             type: String
@@ -79,7 +79,7 @@ const heroSchema = new mongoose.Schema(
         userAvatar: {
             type: String
         }
-    }, 
+    },
     {
         timestamps: true
     }
