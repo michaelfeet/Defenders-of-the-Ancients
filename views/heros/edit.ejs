@@ -5,37 +5,34 @@
 <form action="/heros" class="new-form" method="post">
     <div class="new-grid-container">
         <div class="new-grid-item">
-            <label>Hero Name <br>
-                <input type="text" name="name" placeholder="" required autocomplete="off">
+            <label>Hero Name<br>
+                <input type="text" name="name" autocomplete="off" value="<%= hero.name %>" required>
             </label><br><br>
         
             <label>Upload Image <br>
-                <input type="text" name="image" placeholder="Imgur Link Please" required autocomplete="off">
+                <input type="text" name="image" placeholder="Imgur Link Please"autocomplete="off" value="<%= hero.image %>" required>
             </label><br><br>
         
             <label>Primary Attribute: <br>
-                <select id="primaryAttribute" name="primaryAttribute" class="attribute" required autocomplete="off">
-                    <option hidden disabled selected value></option>
-                    <option value="Agility">Agility</option>
-                    <option value="Intelligence">Intelligence</option>
-                    <option value="Strength">Strength</option>
+                <select id="primaryAttribute" name="primaryAttribute" class="attribute" autocomplete="off" value="<%= hero.primaryAttribute %>" required>
+                    <option <%= hero.primaryAttribute == 'Agility' ?  "selected" : ''%> value="Agility">Agility</option>
+                    <option <%= hero.primaryAttribute == 'Intelligence' ?  "selected" : ''%> value="Intelligence">Intelligence</option>
+                    <option <%= hero.primaryAttribute == 'Strength' ?  "selected" : ''%> value="Strength">Strength</option>
                 </select>
             </label><br><br>
         
             <label>Secondary Attribute: <br>
-                <select id="secondaryAttribute" name="secondaryAttribute" class="attribute" required autocomplete="off">
-                    <option hidden disabled selected value></option>
-                    <option value="Agility">Agility</option>
-                    <option value="Intelligence">Intelligence</option>
-                    <option value="Strength">Strength</option>
+                <select id="secondaryAttribute" name="secondaryAttribute" class="attribute" autocomplete="off" value="<%= hero.secondaryAttribute %>" required>
+                    <option <%= hero.secondaryAttribute == 'Agility' ?  "selected" : ''%> value="Agility">Agility</option>
+                    <option <%= hero.secondaryAttribute == 'Intelligence' ?  "selected" : ''%> value="Intelligence">Intelligence</option>
+                    <option <%= hero.secondaryAttribute == 'Strength' ?  "selected" : ''%> value="Strength">Strength</option>
                 </select>
             </label><br><br>
         
             <label>Attack Type: <br>
-                <select name="attackType" id="attackType" required autocomplete="off">
-                    <option hidden disabled selected value></option>
-                    <option value="Melee">Melee</option>
-                    <option value="Ranged">Ranged</option>
+                <select name="attackType" id="attackType" autocomplete="off" value="<%= hero.attackType %>" required>
+                    <option <%= hero.attackType == 'Melee' ?  "selected" : ''%> value="Melee">Melee</option>
+                    <option <%= hero.attackType == 'Ranged' ?  "selected" : ''%> value="Ranged">Ranged</option>
                 </select>
             </label><br>
         </div>
@@ -43,112 +40,108 @@
         <div class="new-grid-item">
             <div class="lore-container">
                 <label>Lore <br>
-                    <textarea name="lore" id="lore" cols="30" rows="5" required></textarea autocomplete="off">
+                    <textarea name="lore" id="lore" cols="30" rows="5" autocomplete="off" required><%= hero.lore %></textarea>
                 </label><br>
             </div>
         </div>
 
         <div class="new-grid-item">
             <label> Ability 1 <br>
-                <select name="abilityOne" id="abilityOne" class="ability" required autocomplete="off">
-                    <option hidden disabled selected value></option>
-                    <option value="Ally Stats Buff">Ally Stats Buff</option>
-                    <option value="Attack Modifier">Attack Modifier</option>
-                    <option value="Burst Damage">Burst Damage</option>
-                    <option value="Enemy Stats Debuff">Enemy Stats Debuff</option>
-                    <option value="Heal Ally">Heal Ally</option>
-                    <option value="Micro Units">Micro Units</option>
-                    <option value="Slow Enemy">Slow Enemy</option>
-                    <option value="Stun Enemy">Stun Enemy</option>
-                    <option value="Target Damage Over Time">Target Damage Over Time</option>
-                    <option value="Target Area Of Effect">Target Area Of Effect</option>
+                <select name="abilityOne" id="abilityOne" class="ability" autocomplete="off" value="<%= hero.abilityOne %>" required>
+                    <option <%= hero.abilityOne == "Ally Stats Buff" ? "selected" : ''%> value="Ally Stats Buff">Ally Stats Buff</option>
+                    <option <%= hero.abilityOne == "Attack Modifier" ? "selected" : ''%> value="Attack Modifier">Attack Modifier</option>
+                    <option <%= hero.abilityOne == "Burst Damage" ? "selected" : ''%> value="Burst Damage">Burst Damage</option>
+                    <option <%= hero.abilityOne == "Enemy Stats Debuff" ? "selected" : ''%> value="Enemy Stats Debuff">Enemy Stats Debuff</option>
+                    <option <%= hero.abilityOne == "Heal Ally" ? "selected" : ''%> value="Heal Ally">Heal Ally</option>
+                    <option <%= hero.abilityOne == "Micro Units" ? "selected" : ''%> value="Micro Units">Micro Units</option>
+                    <option <%= hero.abilityOne == "Slow Enemy" ? "selected" : ''%> value="Slow Enemy">Slow Enemy</option>
+                    <option <%= hero.abilityOne == "Stun Enemy" ? "selected" : ''%> value="Stun Enemy">Stun Enemy</option>
+                    <option <%= hero.abilityOne == "Target Damage Over Time" ? "selected" : ''%> value="Target Damage Over Time">Target Damage Over Time</option>
+                    <option <%= hero.abilityOne == "Target Area Of Effect" ? "selected" : ''%> value="Target Area Of Effect">Target Area Of Effect</option>
                 </select>
             </label><br><br>
         
             <label>Ability Name <br>
-                <input type="text" name="ab1Name" autocomplete="off">
+                <input type="text" name="ab1Name" autocomplete="off" value="<%= hero.ab1Name %>" required>
             </label><br><br>
             
             <label>Description <br>
-                <textarea name="ab1Desc" id="" cols="30" rows="5"></textarea autocomplete="off">
+                <textarea name="ab1Desc" id="" cols="30" rows="5" required><%= hero.ab1Desc %></textarea>
             </label><br>
         </div>
 
         <div class="new-grid-item">
             <label> Ability 2 <br>
-                <select name="abilityTwo" id="abilityTwo" class="ability" required autocomplete="off">
-                    <option hidden disabled selected value></option>
-                    <option value="Ally Stats Buff">Ally Stats Buff</option>
-                    <option value="Attack Modifier">Attack Modifier</option>
-                    <option value="Burst Damage">Burst Damage</option>
-                    <option value="Enemy Stats Debuff">Enemy Stats Debuff</option>
-                    <option value="Heal Ally">Heal Ally</option>
-                    <option value="Micro Units">Micro Units</option>
-                    <option value="Slow Enemy">Slow Enemy</option>
-                    <option value="Stun Enemy">Stun Enemy</option>
-                    <option value="Target Damage Over Time">Target Damage Over Time</option>
-                    <option value="Target Area Of Effect">Target Area Of Effect</option>
+                <select name="abilityTwo" id="abilityTwo" class="ability" autocomplete="off" value="<%= hero.abilityTwo %>" required>
+                    <option <%= hero.abilityTwo == "Ally Stats Buff" ? "selected" : ''%> value="Ally Stats Buff">Ally Stats Buff</option>
+                    <option <%= hero.abilityTwo == "Attack Modifier" ? "selected" : ''%> value="Attack Modifier">Attack Modifier</option>
+                    <option <%= hero.abilityTwo == "Burst Damage" ? "selected" : ''%> value="Burst Damage">Burst Damage</option>
+                    <option <%= hero.abilityTwo == "Enemy Stats Debuff" ? "selected" : ''%> value="Enemy Stats Debuff">Enemy Stats Debuff</option>
+                    <option <%= hero.abilityTwo == "Heal Ally" ? "selected" : ''%> value="Heal Ally">Heal Ally</option>
+                    <option <%= hero.abilityTwo == "Micro Units" ? "selected" : ''%> value="Micro Units">Micro Units</option>
+                    <option <%= hero.abilityTwo == "Slow Enemy" ? "selected" : ''%> value="Slow Enemy">Slow Enemy</option>
+                    <option <%= hero.abilityTwo == "Stun Enemy" ? "selected" : ''%> value="Stun Enemy">Stun Enemy</option>
+                    <option <%= hero.abilityTwo == "Target Damage Over Time" ? "selected" : ''%> value="Target Damage Over Time">Target Damage Over Time</option>
+                    <option <%= hero.abilityTwo == "Target Area Of Effect" ? "selected" : ''%> value="Target Area Of Effect">Target Area Of Effect</option>
                 </select>
             </label><br><br>
         
             <label>Ability Name <br>
-                <input type="text" name="ab2Name" autocomplete="off">
+                <input type="text" name="ab2Name" autocomplete="off" value="<%= hero.ab2Name %>" required>
             </label><br><br>
             
             <label>Description <br>
-                <textarea name="ab2Desc" id="" cols="30" rows="5"></textarea autocomplete="off">
+                <textarea name="ab2Desc" id="" cols="30" rows="5" required><%= hero.ab2Desc %></textarea>
             </label><br>
         </div>
 
         <div class="new-grid-item">
             <label> Ability 3 <br>
-                <select name="abilityThree" id="abilityThree" class="ability" required autocomplete="off">
-                    <option hidden disabled selected value></option>
-                    <option value="Ally Stats Buff">Ally Stats Buff</option>
-                    <option value="Attack Modifier">Attack Modifier</option>
-                    <option value="Burst Damage">Burst Damage</option>
-                    <option value="Enemy Stats Debuff">Enemy Stats Debuff</option>
-                    <option value="Heal Ally">Heal Ally</option>
-                    <option value="Micro Units">Micro Units</option>
-                    <option value="Slow Enemy">Slow Enemy</option>
-                    <option value="Stun Enemy">Stun Enemy</option>
-                    <option value="Target Damage Over Time">Target Damage Over Time</option>
-                    <option value="Target Area Of Effect">Target Area Of Effect</option>
+                <select name="abilityThree" id="abilityThree" class="ability" autocomplete="off" value="<%= hero.abilityThree %>" required>
+                    <option <%= hero.abilityThree == "Ally Stats Buff" ? "selected" : ''%> value="Ally Stats Buff">Ally Stats Buff</option>
+                    <option <%= hero.abilityThree == "Attack Modifier" ? "selected" : ''%> value="Attack Modifier">Attack Modifier</option>
+                    <option <%= hero.abilityThree == "Burst Damage" ? "selected" : ''%> value="Burst Damage">Burst Damage</option>
+                    <option <%= hero.abilityThree == "Enemy Stats Debuff" ? "selected" : ''%> value="Enemy Stats Debuff">Enemy Stats Debuff</option>
+                    <option <%= hero.abilityThree == "Heal Ally" ? "selected" : ''%> value="Heal Ally">Heal Ally</option>
+                    <option <%= hero.abilityThree == "Micro Units" ? "selected" : ''%> value="Micro Units">Micro Units</option>
+                    <option <%= hero.abilityThree == "Slow Enemy" ? "selected" : ''%> value="Slow Enemy">Slow Enemy</option>
+                    <option <%= hero.abilityThree == "Stun Enemy" ? "selected" : ''%> value="Stun Enemy">Stun Enemy</option>
+                    <option <%= hero.abilityThree == "Target Damage Over Time" ? "selected" : ''%> value="Target Damage Over Time">Target Damage Over Time</option>
+                    <option <%= hero.abilityThree == "Target Area Of Effect" ? "selected" : ''%> value="Target Area Of Effect">Target Area Of Effect</option>
                 </select>
             </label><br><br>
         
             <label>Ability Name <br>
-                <input type="text" name="ab3Name" autocomplete="off">
+                <input type="text" name="ab3Name" autocomplete="off" value="<%= hero.ab3Name %>" required>
             </label><br><br>
             
             <label>Description <br>
-                <textarea name="ab3Desc" id="" cols="30" rows="5"></textarea autocomplete="off">
+                <textarea name="ab3Desc" id="" cols="30" rows="5" required><%= hero.ab3Desc %></textarea>
             </label><br>
         </div>
 
         <div class="new-grid-item">
             <label> Ability 4 <br>
-                <select name="abilityFour" id="abilityFour" class="ability" required autocomplete="off">
-                    <option hidden disabled selected value></option>
-                    <option value="Ally Stats Buff">Ally Stats Buff</option>
-                    <option value="Attack Modifier">Attack Modifier</option>
-                    <option value="Burst Damage">Burst Damage</option>
-                    <option value="Enemy Stats Debuff">Enemy Stats Debuff</option>
-                    <option value="Heal Ally">Heal Ally</option>
-                    <option value="Micro Units">Micro Units</option>
-                    <option value="Slow Enemy">Slow Enemy</option>
-                    <option value="Stun Enemy">Stun Enemy</option>
-                    <option value="Target Damage Over Time">Target Damage Over Time</option>
-                    <option value="Target Area Of Effect">Target Area Of Effect</option>
+                <select name="abilityFour" id="abilityFour" class="ability" autocomplete="off" value="<%= hero.abilityFour %>" required>
+                    <option <%= hero.abilityFour == "Ally Stats Buff" ? "selected" : ''%> value="Ally Stats Buff">Ally Stats Buff</option>
+                    <option <%= hero.abilityFour == "Attack Modifier" ? "selected" : ''%> value="Attack Modifier">Attack Modifier</option>
+                    <option <%= hero.abilityFour == "Burst Damage" ? "selected" : ''%> value="Burst Damage">Burst Damage</option>
+                    <option <%= hero.abilityFour == "Enemy Stats Debuff" ? "selected" : ''%> value="Enemy Stats Debuff">Enemy Stats Debuff</option>
+                    <option <%= hero.abilityFour == "Heal Ally" ? "selected" : ''%> value="Heal Ally">Heal Ally</option>
+                    <option <%= hero.abilityFour == "Micro Units" ? "selected" : ''%> value="Micro Units">Micro Units</option>
+                    <option <%= hero.abilityFour == "Slow Enemy" ? "selected" : ''%> value="Slow Enemy">Slow Enemy</option>
+                    <option <%= hero.abilityFour == "Stun Enemy" ? "selected" : ''%> value="Stun Enemy">Stun Enemy</option>
+                    <option <%= hero.abilityFour == "Target Damage Over Time" ? "selected" : ''%> value="Target Damage Over Time">Target Damage Over Time</option>
+                    <option <%= hero.abilityFour == "Target Area Of Effect" ? "selected" : ''%> value="Target Area Of Effect">Target Area Of Effect</option>
                 </select>
             </label><br><br>
         
             <label>Ability Name <br>
-                <input type="text" name="ab4Name" autocomplete="off">
+                <input type="text" name="ab4Name" autocomplete="off" value="<%= hero.ab4Name %>" required>
             </label><br><br>
             
             <label>Description <br>
-                <textarea name="ab4Desc" id="" cols="30" rows="5"></textarea autocomplete="off">
+                <textarea name="ab4Desc" id="" cols="30" rows="5" autocomplete="off" required><%= hero.ab4Desc %></textarea>
             </label><br>
         </div>
     </div>

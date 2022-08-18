@@ -11,7 +11,7 @@ module.exports = {
 }
 
 function index(req, res) {
-    Hero.find({}, function(err, allHeros) {
+    Hero.find({}, null, {sort: {createdAt: 'desc'}}, function(err, allHeros) {
         if(err) {
             res.send('error all heros')
         }

@@ -32,16 +32,6 @@ textarea {
   display: none
 }
 
-.hide-ability-desc {
-  visibility: hidden;
-  /* text-align: center; */
-  max-width: 80%;
-  font-size: 20px;
-}
-.ability img:hover + .hide-ability-desc {
-  visibility: visible;
-}
-
 html {
   font-family: 'Aboreto';
   height: 100%;
@@ -99,10 +89,10 @@ nav img:hover {
   padding: 25px 20px;
   font-size: 25px;
 }
+
 .nav-text:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
-
 }
 
 .log {
@@ -122,7 +112,6 @@ nav img:hover {
   display: grid;
   justify-content: center;
   grid-template-columns: auto auto auto;
-  grid-auto-flow: dense;
   padding: 10px;
 }
 
@@ -131,22 +120,20 @@ nav img:hover {
   margin: 10px;
   font-size: 30px;
   text-align: center;
-  height: 250px;
+  height: 275px;
   width: 250px;
   order: 1;
 }
 
 .grid-item img {
   max-width: 100%;
-  max-height: auto;
+  max-height: 80%;
   border-radius: 10px;
-
 }
 
 .grid-item:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
-
 }
 
 .show-grid-container, .comment-container {
@@ -190,7 +177,8 @@ nav img:hover {
 }
 
 .bottom-bio {
-  position: absolute;
+  margin-top: 30px;
+  position: relative;
   bottom: 0;
   text-transform: capitalize;
   font-size: 20px;
@@ -208,13 +196,15 @@ nav img:hover {
   width: 50%;
 }
 
+.right-image {
+  min-height: 350px;
+}
 .right-image img{
   max-width: 100%;
-  max-height: auto;
+  max-height: 350px;
 }
 
 .abilities {
-  /* border: 1px solid white; */
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   padding-top: 100px;
@@ -222,13 +212,18 @@ nav img:hover {
 }
 
 .ability {
-  /* border: 1px solid black; */
-  width: 100%;
-  /* padding: 0 15px; */
+  width: 81%;
+}
+
+.ability-show img {
+  width: 90px;
+}
+.ability-name {
+  font-size: 24px;
 }
 
 .comment-container {
-  margin-top: 200px;
+  margin-top: 400px;
   padding-bottom: 200px;
 }
 
@@ -311,4 +306,37 @@ h1.new, h1.edit-hero {
 
 .comment-btn {
   width: 200px;
+}
+
+.content1, .content2, .content3, .content4 {
+    /*  display: none;  remove */
+    opacity: 0; /* add */
+    transition: all ; /* add */
+    position: absolute;
+    left: 550px;
+    right: 0px;
+    top: 900px;
+    bottom: 0px;
+    margin: auto;
+    width: 0; /* [OPTIONAL] modify from 300px */
+    height: 0; /* ditto */
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    overflow: auto;
+    max-height: 200px;
+}
+
+.trigger1:hover+.content1,
+.trigger1:focus+.content1,
+.trigger2:hover+.content2,
+.trigger2:focus+.content2,
+.trigger3:hover+.content3,
+.trigger3:focus+.content3,
+.trigger4:hover+.content4,
+.trigger4:focus+.content4 {
+  /* add, for persistent display of content. click elsewhere to close again */
+  /*  display: block; remove */
+  opacity: 1; /* add */
+  width: 500px; /* [OPTIONAL] add, see above */
+  height: 200px;
 }

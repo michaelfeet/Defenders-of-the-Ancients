@@ -30,81 +30,44 @@
             <img src="<%= hero.image %>" alt="">
         </div>
         <div class="abilities">
-            <div class="ability ab1">
-                <img src="https://i.imgur.com/pxemOj8.png" alt="" class="img1">
-                <div class="hide-ability-desc">
-                    
-                        <div><%= hero.abilityOne %></div><br>
-                        <div><%= hero.ab1Name %></div><br>
-                        <div><%= hero.ab1Desc %></div>
-                    
-                </div>
+            <div class="ability-show ab1">
+                <a class="trigger1" href="javascript:void(0)"><img src="https://i.imgur.com/pxemOj8.png" alt="" class=""></a>
+                <div class="hide-ability-desc content1">
+                    <div class="ability-name"><%= hero.ab1Name %></div><br>
+                    <div><%= hero.abilityOne %></div><br>
+                    <div><%= hero.ab1Desc %></div>
+            </div>
             </div>
 
-            <div class="ability ab2">
-                <img src="https://i.imgur.com/hWgcHoa.png" alt="">
-                <div class="hide-ability-desc">
-                    
+            <div class="ability-show ab2">
+                <a class="trigger2" href="javascript:void(0)"><img src="https://i.imgur.com/hWgcHoa.png" alt="" class=""></a>
+                <div class="hide-ability-desc content2">
+                    <div class="ability-name"><%= hero.ab2Name %></div><br>
                     <div><%= hero.abilityTwo %></div><br>
-                    <div><%= hero.ab2Name %></div><br>
                     <div><%= hero.ab2Desc %></div>
-                    
                 </div>
             </div>
 
-            <div class="ability ab3">
-                <img src="https://i.imgur.com/ZOC5wq8.png" alt="">
-                <div class="hide-ability-desc">
-                    
-                        <div><%= hero.abilityThree %></div><br>
-                        <div><%= hero.ab3Name %></div><br>
-                        <div><%= hero.ab3Desc %></div>
-                    
+            <div class="ability-show ab3">
+                <a class="trigger3" href="javascript:void(0)"><img src="https://i.imgur.com/ZOC5wq8.png" alt="" class=""></a>
+                <div class="hide-ability-desc content3">
+                    <div class="ability-name"><%= hero.ab3Name %></div><br>
+                    <div><%= hero.abilityThree %></div><br>
+                    <div><%= hero.ab3Desc %></div>
                 </div>
             </div>
 
-            <div class="ability ab4 popup-container">
-                <img src="https://i.imgur.com/OWY1q7S.png" alt="" class="ab4img">
-                <div class="hide-ability-desc popup-body popup-bottom">
+            <div class="ability-show ab4">
+                <a class="trigger4" href="javascript:void(0)"><img src="https://i.imgur.com/OWY1q7S.png" alt="" class=""></a>
+                <div class="hide-ability-desc popup-body popup-bottom content4">
+                    <div class="ability-name"><%= hero.ab4Name %></div><br>
                     <div><%= hero.abilityFour %></div><br>
-                    <div><%= hero.ab4Name %></div><br>
                     <div><%= hero.ab4Desc %></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<!-- 
-<div class="testarea">
-    <div class="hide-ability1-desc">
-        <div>
-            <div><%= hero.abilityOne %></div><br>
-            <div><%= hero.ab1Name %></div><br>
-            <div><%= hero.ab1Desc %></div>
-        </div>
-    </div>
-    <div class="hide-ability2-desc">
-        <div>
-            <div><%= hero.abilityTwo %></div><br>
-        <div><%= hero.ab2Name %></div><br>
-        <div><%= hero.ab2Desc %></div>
-        </div>
-    </div>
-    <div class="hide-ability3-desc">
-        <div>
-            <div><%= hero.abilityThree %></div><br>
-            <div><%= hero.ab3Name %></div><br>
-            <div><%= hero.ab3Desc %></div>
-        </div>
-    </div>
-    <div class="hide-ability4-desc popup-body popup-bottom">
-        <div><%= hero.abilityFour %></div><br>
-        <div><%= hero.ab4Name %></div><br>
-        <div><%= hero.ab4Desc %></div>
-    </div>
-</div> -->
-
 
 <div class="comment-container">
     <div class="comments">
@@ -140,8 +103,5 @@
         <% } %>
     </div>
 </div>
-
-
-
 
 <%- include('../partials/footer') %>

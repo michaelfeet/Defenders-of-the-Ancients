@@ -21,7 +21,6 @@ $attribute.on("change", function () {
     });
 });
 
-
 const $ability = $(".ability");
 $ability.on("change", function () {
     let select = this,
