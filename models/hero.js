@@ -3,7 +3,11 @@ const mongoose = require('mongoose');
 const commentSchema = new mongoose.Schema(
     {
         comment: String,
-        user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, //< - we want to make sure a review is always tied to a user
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+            required: true
+        },
         userName: String,
         userAvatar: String
     },
